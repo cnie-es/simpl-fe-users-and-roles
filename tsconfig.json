@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "esModuleInterop": true,
+    "paths": {
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+    "@fe-simpl/landing-page": ["src/app/shared/landing-page/index.ts"],
+    "@fe-simpl/core/pipes": ["src/app/shared/pipes/index.ts"],
+    "@fe-simpl/utils": ["src/app/shared/utils/index.ts"],
+    "@fe-simpl/filter-chips": ["src/app/shared/filter-chips/filter-chips.component.ts"]
+    }
+  }
+}

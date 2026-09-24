@@ -1,0 +1,72 @@
+{
+  "name": "fe-users-and-roles",
+  "version": "2.11.0",
+  "license": "mit",
+  "description": "Users and roles frontend - modified version of SIMPL fe-users-and-roles (upstream commit e8941cb), modified by the EDNEL-RIOJA project team for CNIE-ES. See NOTICE.EDNEL.md.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cnie-es/simpl-fe-users-and-roles.git"
+  },
+  "devDependencies": {
+    "@jsverse/transloco-keys-manager": "^7.0.2",
+    "@openapitools/openapi-generator-cli": "^2.18.4",
+    "@swc-node/register": "1.9.2",
+    "@swc/core": "1.5.7",
+    "@swc/helpers": "0.5.15",
+    "@testing-library/angular": "^17.3.5",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/utils": "^8.19.0",
+    "allure-jest": "^3.4.1",
+    "allure-js-commons": "^3.4.1",
+    "eslint-config-prettier": "^9.0.0",
+    "jasmine-marbles": "~0.9.1",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "29.7.0",
+    "jest-preset-angular": "^15.0.3",
+    "jest-sonar-reporter": "^2.0.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "ngx-build-plus": "^19.0.0",
+    "postcss": "^8.4.5",
+    "postcss-url": "~10.1.3",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "sonar-scanner": "^3.1.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "test": "jest",
+    "build": "node scripts/generate-info-version.js && ng build",
+    "test:ci": "jest --coverage --passWithNoTests",
+    "sonar": "sonar-scanner"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular-architects/module-federation": "19",
+    "@eui/deps-base": "19.3.6",
+    "@jsverse/transloco": "^7.4.0",
+    "bootstrap": "^5.3.3",
+    "flat-cjs-for-jest": "npm:flat@^5.0.2",
+    "keycloak-angular": "19.0.2",
+    "keycloak-js": "25.0.6",
+    "@simpl/api-client-usersroles-tier1-v2": "^2.0.0",
+    "@simpl/api-client-authenticationprovider-tier1-v2": "^2.0.0",
+    "@simpl/api-client-authenticationprovider-v1": "^1.5.0"
+  },
+  "resolutions": {
+    "js-yaml": ">=3.13.1",
+    "pdfjs-dist": "4.10.38",
+    "tar": ">=6.2.1",
+    "katex": ">=0.16.10",
+    "follow-redirects": ">=1.15.4",
+    "word-wrap": ">=1.2.4",
+    "postcss": ">=8.4.31",
+    "semver": ">=7.5.2",
+    "express": "4.21.2",
+    "path-to-regexp": "1.9.0",
+    "@ngx-translate/core": "16.0.0",
+    "@ngx-translate/http-loader": "8.0.0"
+  }
+}

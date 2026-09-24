@@ -1,0 +1,126 @@
+
+  <eui-page>
+    <eui-page-header [label]="'roleRequestsManagement.title' | translate">
+    </eui-page-header>
+    <eui-page-content>
+      <eui-page-columns>
+        <eui-page-column [isCollapsed]="true" [isCollapsible]="true" euiSizeVariant="xl" [label]="'roleRequestsManagement.filters.title' | translate" class="ednel-filters">
+          <eui-page-column-body>
+            <form [formGroup]="roleRequestsManagementService.roleRequestsFilterForm" class="eui-u-flex eui-u-flex-column eui-u-flex-gap-s" id="filtersForm" (ngSubmit)="addFilter()" >
+              <div euiInputGroup>
+                <label euiLabel for="createdBy">{{ 'roleRequestsManagement.filters.createdBy' | translate }}</label>
+                <input data-testid="users_filter_button_createdBy" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="createdBy" formControlName="createdBy"
+                       placeholder="{{'roleRequestsManagement.filters.placeholder.createdBy' | translate}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="status">{{ 'roleRequestsManagement.filters.status' | translate }}</label>
+                <select data-testid="users_filter_button_status" [placeholder]="'roleRequestsManagement.filters.placeholder.status' | translate " formControlName="status" euiSelect name="status" id="status">
+                  <option value="OPEN">{{ ('roleRequestsManagement.filters.OPEN') | translate}}</option>
+                  <option value="CANCELED">{{ ('roleRequestsManagement.filters.CANCELED') | translate}}</option>
+                  <option value="APPROVED">{{ ('roleRequestsManagement.filters.APPROVED') | translate}}</option>
+                  <option value="REJECTED">{{ ('roleRequestsManagement.filters.REJECTED') | translate}}</option>
+                </select>
+              </div>
+              <div class="ednel-button-group">
+                <button data-testid="users_filter_button_reset" euiButton id="reset-filters-button" type="button" class="eui-u-width-50"
+                        euiSecondary (click)="resetFilters()">
+                  {{ 'roleRequestsManagement.filters.reset' | translate }}
+                </button>
+                <button data-testid="users_filter_button_submit" euiButton id="submit-filters-button" type="submit" class="eui-u-width-50"
+                        euiPrimary>
+                  {{ 'roleRequestsManagement.filters.search' | translate }}
+                </button>
+              </div>
+            </form>
+          </eui-page-column-body>
+        </eui-page-column>
+
+        <eui-page-column>
+          <eui-page-column-body>
+            <div class="eui-u-display-flex eui-u-mb-m eui-u-flex-align-items-center">
+              @if (roleRequestsManagementService.filtersChips().length){
+                <div class="eui-u-mr-xs eui-u-p-2xs eui-u-flex-column eui-u-flex-gap-none">
+                  <span>
+                    {{ 'filters.selectedCriteria' | translate }}
+                  </span>
+                  <button id="participant-clear-filters-action" (click)="resetFilters()" euiButton [euiBasicButton]="true">{{ 'filters.clearAll' | translate }}</button>
+                </div>
+                @for (chip of roleRequestsManagementService.filtersChips(); track chip.id) {
+                  <eui-chip
+                    [isChipRemovable]="true"
+                    (remove)="removeChip($event)"
+                    [id]="chip.id"
+                    [data]="chip">
+                    <span euiLabel>{{ chip.label }}</span>
+                  </eui-chip>
+                }
+              }
+            </div>
+            <div class="eui-table-v2__scrollable-wrapper">
+              <table data-testid="roles_requests_table" [isAsync]="true" euiTableV2 [isTableResponsive]="true" [data]="roleRequestsManagementService.roleRequestsData() ? roleRequestsManagementService.roleRequestsData().items : []" (sortChange)="onSortChange($event)">
+                <ng-template euiTemplate="header">
+                  <tr>
+                    <th>{{ 'roleRequestsManagement.table.id' | translate }}</th>
+                    <th>{{ 'roleRequestsManagement.table.status' | translate }}</th>
+                    <th>{{ 'roleRequestsManagement.table.createdBy' | translate }}</th>
+                    <th isSortable sortOn="creationTimestamp" >{{ 'roleRequestsManagement.table.creationTimestamp' | translate }}</th>
+                    <th>{{ 'roleRequestsManagement.table.lastUpdateTimestamp' | translate }}</th>
+                    <th>{{ 'roleRequestsManagement.table.actions' | translate }}</th>
+                  </tr>
+                </ng-template>
+                <ng-template let-row euiTemplate="body">
+                  <tr>
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.id' | translate"><span  class="eui-u-text-truncate eui-u-mr-xs">{{ row.id | slice:0:4 }}...{{ row.id | slice:-4 }}</span></td>
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.status' | translate">{{ row.status }}</td>
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.createdBy' | translate">{{ row.createdBy }}</td>
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.creationTimestamp' | translate">{{ row.creationTimestamp | i18nDate }}</td>
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.lastUpdateTimestamp' | translate">{{ row.lastUpdateTimestamp | i18nDate }}</td>
+
+                    <td [attr.data-col-label]="'roleRequestsManagement.table.actions' | translate">
+                      <button data-testid="role_requests_management_table_button_detail" (click)="showRoleRequestDetail(row)" [euiTooltipPrimary]="true" [euiTooltip]="'roleRequestsManagement.table.detail' | translate" id="action-detail" euiButton [euiBasicButton]="true" [euiRounded]="true" [euiIconButton]="true" euiPrimary euiSizeS >
+                        <eui-icon-svg icon="eye:sharp"></eui-icon-svg>
+                      </button>
+                      @if (row.status === 'OPEN') {
+                        <button data-testid="role_requests_management_table_button_review" (click)="reviewRoleRequest(row)" [euiTooltipPrimary]="true" [euiTooltip]="'roleRequestsManagement.table.review' | translate" id="action-detail" euiButton [euiBasicButton]="true" [euiRounded]="true" [euiIconButton]="true" euiPrimary euiSizeS >
+                          <eui-icon-svg set="eui" icon="eui-ecl-edit"></eui-icon-svg>
+                        </button>
+                      }
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template let-row euiTemplate="noData">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="6">
+                      {{ 'roleRequestsManagement.table.empty' | translate }}
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template euiTemplate="footer">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="6">
+                      <eui-paginator #paginator [hasPageNumberNavigation]="true" [length]="roleRequestsManagementService.roleRequestsData() ? roleRequestsManagementService.roleRequestsData().total : 0" [pageSizeOptions]="[5, 10, 25, 100]"
+                                     [page]="roleRequestsManagementService.pagination().page" [pageSize]="roleRequestsManagementService.pagination().pageSize" (pageChange)="onPageChange($event)">
+                      </eui-paginator>
+                    </td>
+                  </tr>
+                </ng-template>
+              </table>
+            </div>
+          </eui-page-column-body>
+        </eui-page-column>
+      </eui-page-columns>
+    </eui-page-content>
+  </eui-page>
+
+  <eui-dialog #roleRequestDetailDialog
+              [title]="'roleRequestsManagement.detail.title' | translate"
+              [dismissLabel]="'roleRequestsManagement.detail.close' | translate"
+              [acceptLabel]="'roleRequestsManagement.detail.review' | translate"
+              [isHandleCloseOnAccept]="true"
+              (accept)="reviewRoleRequest(roleRequestDetail())"
+              (dialogClose)="onRoleRequestDetailDialogClose()">
+    @if (roleRequestDetail()) {
+      <app-role-request-detail [data]="roleRequestDetail()"></app-role-request-detail>
+    }
+
+  </eui-dialog>

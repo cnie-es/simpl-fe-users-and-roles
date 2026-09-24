@@ -1,0 +1,475 @@
+{
+  "common": {
+    "yes": "Sí",
+    "no": "No",
+    "signout": "Cerrar sesión",
+    "actionCompleted": "Acción completada",
+    "actionFailed": "Acción fallida",
+    "failureMessage": "Hubo un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde."
+  },
+  "userInformationPage": {
+    "title": "Lista de usuarios",
+    "email": "Correo electrónico",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "username": "Usuario",
+    "status": "Estado",
+    "enabled": "Habilitado",
+    "disabled": "Deshabilitado",
+    "updateTimestamp": "Fecha de última actualización",
+    "info": "Acciones",
+    "cancel": "Cerrar",
+    "userRoles": "Lista de roles",
+    "newUser": "Crear nuevo usuario",
+    "noRoles": "No hay roles para el usuario seleccionado.",
+    "empty": "Sin datos",
+    "editUser": "Editar usuario",
+    "viewDetail": "Ver detalles del usuario",
+    "deleteUser": "Eliminar usuario",
+    "filters": {
+      "email": "Correo electrónico",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "username": "Usuario",
+      "placeholder": {
+        "email": "Escriba un correo electrónico",
+        "firstName": "Escriba un nombre",
+        "lastName": "Escriba un apellido",
+        "username": "Escriba un usuario"
+      },
+      "search": "Aplicar",
+      "reset": "Restablecer"
+    }
+  },
+  "editUser": {
+    "title": "Editar usuario",
+    "form": {
+      "email": "Correo electrónico",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "username": "Usuario",
+      "roles": "Roles",
+      "status": "Estado",
+      "enabled": "Habilitado",
+      "disabled": "Deshabilitado"
+    },
+    "cancelButton": "Cancelar",
+    "saveButton": "Guardar cambios",
+    "saveSuccess": "Usuario actualizado correctamente",
+    "emailValidation": "Debe ser un correo electrónico válido",
+    "required": "El campo es obligatorio y no puede estar vacío"
+  },
+  "deleteUser": {
+    "title": "Eliminar usuario",
+    "content": "Está a punto de eliminar el siguiente usuario: {{username}}. <br> Esta acción es irreversible, ¿desea continuar?",
+    "saveSuccess": "Usuario eliminado correctamente.",
+    "saveError": "Ocurrió un error al eliminar el usuario. Por favor, inténtelo de nuevo."
+  },
+  "newUser": {
+    "title": "Nuevo usuario",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Correo electrónico",
+    "firstName": "Nombre",
+    "firstNamePlaceholder": "Nombre",
+    "lastName": "Apellido",
+    "lastNamePlaceholder": "Apellido",
+    "username": "Usuario",
+    "usernamePlaceholder": "Usuario",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Contraseña",
+    "confirmPassword": "Confirmación de contraseña",
+    "confirmPasswordPlaceholder": "Confirmar contraseña",
+    "roles": "Roles",
+    "rolesPlaceholder": "Roles",
+    "rolesEmpty": "No hay roles disponibles",
+    "button": "Crear nuevo usuario",
+    "saveSuccess": "Nuevo usuario creado correctamente",
+    "emailValidation": "Debe ser un correo electrónico válido",
+    "required": "El campo es obligatorio y no puede estar vacío",
+    "noMatch": "Las contraseñas no coinciden",
+    "passwordRules": {
+      "mustBeBetween": "La contraseña debe tener entre",
+      "passwordLength": "{{start}} y {{end}} caracteres",
+      "containsAtLeast": "y contener al menos",
+      "uppercaseLetters": "{{num}} letra mayúscula (A-Z)",
+      "lowercaseLetters": "{{num}} letra minúscula (a-z)",
+      "numbers": "{{num}} número (0-9)",
+      "specialChars": "{{num}} carácter especial ({{specialCharsSample}} etc).",
+      "forbidden": "La contraseña no debe contener partes del correo electrónico, nombre de organización, nombre, apellido o usuario de más de {{num}} caracteres."
+    }
+  },
+  "landing-pages": {
+    "unauthorized": {
+      "title": "Acceso restringido por rol",
+      "message": "Acceso denegado. Su rol no tiene permisos para ver este contenido."
+    },
+    "error-page": {
+      "title": "Error",
+      "message": {
+        "400": "El servidor no pudo entender su solicitud debido a una sintaxis o parámetros no válidos.",
+        "401": "No está autorizado para acceder a este recurso. Asegúrese de haber iniciado sesión con las credenciales correctas.",
+        "403": "Acceso denegado. Su rol no tiene permisos para ver este contenido.",
+        "404": "El recurso que busca no se encontró en el servidor.",
+        "500": "El servidor encontró un error interno y no pudo completar su solicitud. Por favor, inténtelo de nuevo más tarde.",
+        "501": "El servidor no admite la funcionalidad necesaria para completar la solicitud.",
+        "502": "El servidor, actuando como puerta de enlace, recibió una respuesta no válida del servidor upstream.",
+        "503": "El servidor no está disponible actualmente debido a sobrecarga o mantenimiento. Por favor, inténtelo de nuevo más tarde.",
+        "504": "El servidor, actuando como puerta de enlace, no recibió una respuesta oportuna del servidor upstream.",
+        "505": "El servidor no admite la versión del protocolo HTTP utilizada en la solicitud.",
+        "508": "El servidor detectó un bucle al procesar la solicitud.",
+        "511": "El cliente debe autenticarse para obtener acceso a la red."
+      }
+    }
+  },
+  "rolesInfoPage": {
+    "empty": "Sin datos",
+    "title": "Lista de roles",
+    "name": "Nombre",
+    "description": "Descripción",
+    "code": "Código",
+    "enabled": "Habilitado",
+    "builtIn": "Integrado",
+    "detail": "Acción",
+    "showDetail": "Mostrar detalle",
+    "editRole": "Editar rol",
+    "deleteRole": "Eliminar rol",
+    "newRole": "Crear nuevo rol",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "update": "Actualizar",
+    "filters": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "code": "Código",
+      "placeholder": {
+        "name": "Escriba un nombre",
+        "description": "Escriba una descripción",
+        "code": "Escriba un código"
+      },
+      "search": "Aplicar",
+      "reset": "Restablecer"
+    }
+  },
+  "roleDescriptions": {
+    "T2IAA_M": "Usuario responsable de definir y modificar el propio procedimiento de alta (onboarding), como la configuración de los documentos obligatorios y las reglas que seguirá el proceso de alta.",
+    "NOTARY": "Operador de autorización de Nivel 2 (Tier 2), encargado de atender las solicitudes de alta y realizar su seguimiento. Puede solicitar documentación adicional, comentar las solicitudes y aprobarlas o rechazarlas.",
+    "ONBOARDER_M": "Administrador de configuración de Nivel 2 (Tier 2), encargado de finalizar la configuración de Nivel 2 de la instalación de un agente.",
+    "IATTR_M": "Rol presente únicamente en la Autoridad de Gobernanza del espacio de datos. Cubre todo el ciclo de vida de los atributos de identidad, desde su creación y gestión hasta su asignación a los participantes.",
+    "T1UAR_M": "Gestor de usuarios y roles de Nivel 1 (Tier 1). Gestiona los roles locales y los atributos de identidad del espacio de datos: los define y los asigna a los tipos de participante, determinando si pueden asignarse.",
+    "APPLICANT": "Usuario final que gestiona las solicitudes de alta de los participantes que se registran a través del sitio público de alta del espacio de datos. Crea las solicitudes de alta y responde a las interacciones de autorización de Nivel 2 (NOTARY) hasta conseguir la aprobación.",
+    "Ro-MU-CA": "Rol definido en el Catálogo Federado XFSC: Administrador del catálogo.",
+    "Ro-MU-A": "Rol definido en el Catálogo Federado XFSC: Administrador de participante.",
+    "Ro-SD-A": "Rol definido en el Catálogo Federado XFSC: Administrador de autodescripciones (Self-Description).",
+    "Ro-Pa-A": "Rol definido en el Catálogo Federado XFSC: Administrador de usuarios del participante.",
+    "SD_PUBLISHER": "Rol del usuario responsable de crear y publicar la autodescripción (Self-Description) en el catálogo.",
+    "SD_CONSUMER": "Rol de Nivel 1 (Tier 1) para el consumidor de datos.",
+    "GA_SCHEMA_ADMIN": "Administrador del Gestor de Esquemas (Schema Manager). Rol de Nivel 1 (Tier 1) para la administración de esquemas.",
+    "GA_SCHEMA_VIEWER": "Consultor del Gestor de Esquemas (Schema Manager). Rol de Nivel 1 (Tier 1) para la consulta de esquemas.",
+    "KIBANA_BUSINESS_USER": "Usuario de negocio de Kibana. Permite acceder a Kibana como usuario de negocio (vinculado a un usuario local de Kibana).",
+    "KIBANA_ADMIN": "Administrador de Kibana. Permite acceder a Kibana como administrador (vinculado a un usuario local de Kibana).",
+    "ORCH_DEVELOPER": "Desarrollador de orquestación de datos. Permite desarrollar flujos de trabajo y servicios de orquestación de datos.",
+    "ORCH_ADMIN": "Administrador de orquestación de datos. Administra y gestiona la orquestación: programación de tareas, reintento de flujos de trabajo y monitorización.",
+    "INFRA_ADMIN": "Administrador del proveedor de infraestructura. Gestiona todos los recursos en la nube del proveedor de infraestructura.",
+    "INFRA_DEPLOYER": "Desplegador del proveedor de infraestructura. Activa y desactiva los recursos en la nube del proveedor de infraestructura.",
+    "G-Administrator": "Administrador de la Autoridad de Gobernanza. Gestiona y administra todo el espacio de datos.",
+    "G-Content Editor": "Editor de contenidos de la Autoridad de Gobernanza. Gestiona el contenido del portal público.",
+    "G-Operator": "Operador de la Autoridad de Gobernanza. Responsable de la gestión operativa diaria del espacio de datos.",
+    "G-Portal Manager": "Gestor del portal de la Autoridad de Gobernanza. Gestiona el portal público, tanto su estructura como su contenido.",
+    "G-Tech Operator": "Operador técnico de la Autoridad de Gobernanza. Responsable de la operación y el mantenimiento de la infraestructura técnica del espacio de datos.",
+    "P-Connector Administrator": "Administrador del conector del participante. Instala y gestiona los conectores EDNEL del participante y designa al administrador de usuarios del participante.",
+    "P-Data Consumer": "Consumidor de datos del participante. Puede explorar y buscar en el catálogo de activos y consumir datos gratuitos cumpliendo las políticas aplicables.",
+    "P-Data Offer Manager": "Gestor de ofertas de datos del participante. Define las políticas y los precios de los activos del participante y crea las ofertas.",
+    "P-Data Provider": "Proveedor de datos del participante. Crea, edita y elimina los metadatos de los activos del participante.",
+    "P-Financial Administrator": "Administrador financiero del participante. Se encarga de las operaciones financieras: facturación y gestión de pagos.",
+    "P-Legal Representative": "Persona designada por la entidad participante para solicitar la participación en EDNEL y actuar como su representante legal, por ejemplo como punto de contacto con la Autoridad de Gobernanza.",
+    "P-User Administrator": "Administrador de usuarios del participante. Gestiona los usuarios del participante: los crea, los edita y los desactiva, y les asigna roles, salvo los de P-Legal Representative y P-Connector Administrator."
+  },
+  "roleDetail": {
+    "title": "Detalle del rol",
+    "roleName": "Nombre del rol",
+    "roleDescription": "Descripción del rol",
+    "empty": "Sin datos",
+    "resetAttributes": "Restablecer",
+    "saveAttributes": "Guardar",
+    "saveChanges": "Guardar cambios",
+    "messageChanges": "Esto cambiará los atributos de este rol, lo que puede afectar a muchos usuarios. ¿Desea continuar?",
+    "disabledExplanation": "Este atributo no se puede seleccionar porque no está asignado al participante ni es asignable a un rol.",
+    "updateSuccessMessage": "Atributos del rol cambiados correctamente",
+    "updateErrorMessage": "No se pudieron guardar los cambios. Por favor, inténtelo de nuevo más tarde.",
+    "filters": {
+      "name": "Nombre",
+      "code": "Código",
+      "updateTimestamp": "Seleccionar rango de fechas",
+      "updateTimestampFrom": "Fecha de inicio",
+      "updateTimestampTo": "Fecha de fin",
+      "placeholder": {
+        "name": "Escriba un nombre",
+        "code": "Escriba un código"
+      },
+      "search": "Aplicar",
+      "reset": "Restablecer"
+    },
+    "identityAttributesInfoPage": {
+      "title": "Lista de atributos",
+      "name": "Nombre",
+      "code": "Código",
+      "assignableToRoles": "Asignable a roles",
+      "updateTimestamp": "Fecha de última sincronización"
+    }
+  },
+  "filters": {
+    "title": "Filtro",
+    "titlePlural": "Filtros",
+    "selectColumn": "Seleccionar columna",
+    "statusPlaceholder": "Seleccionar valor",
+    "statusEmpty": "---",
+    "emailPlaceholder": "correo electrónico",
+    "reset": "Restablecer",
+    "apply": "Aplicar",
+    "name": "Nombre",
+    "description": "Descripción",
+    "code": "Código",
+    "organization": "Nombre del participante",
+    "participantType": "Tipo de participante",
+    "email": "Correo electrónico",
+    "onboardingDate": "Fecha de incorporación",
+    "updateTimestamp": "Fecha de última actualización",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "username": "Usuario",
+    "selectedCriteria": "Criterios seleccionados",
+    "clearAll": "Limpiar todo"
+  },
+  "identityAttributesInfoPage": {
+    "title": "Lista de atributos",
+    "name": "Nombre",
+    "code": "Código",
+    "assignableToRoles": "Asignable a roles",
+    "updateTimestamp": "Fecha de última sincronización",
+    "empty": "Sin datos",
+    "sync": {
+      "button": "Sincronizar atributos de identidad",
+      "success": "Copia local de atributos sincronizada correctamente.",
+      "error": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
+    },
+    "filters": {
+      "name": "Nombre",
+      "code": "Código",
+      "description": "Descripción",
+      "updateTimestamp": "Seleccionar rango de fechas",
+      "updateTimestampFrom": "Fecha de inicio",
+      "updateTimestampTo": "Fecha de fin",
+      "placeholder": {
+        "name": "Escriba un nombre",
+        "code": "Escriba un código",
+        "description": "Escriba una descripción"
+      },
+      "search": "Aplicar",
+      "reset": "Restablecer"
+    }
+  },
+  "deleteRole": {
+    "title": "Eliminar rol",
+    "content": "Está a punto de eliminar el siguiente rol: <br> {{roleName}}. <br><br> Esta acción es irreversible, ¿desea continuar?",
+    "deleteButton": "Eliminar",
+    "saveSuccess": "Rol eliminado correctamente.",
+    "saveError": "Algo salió mal. Por favor, inténtelo de nuevo."
+  },
+  "newEditRole": {
+    "title": "Crear nuevo rol",
+    "titleEdit": "Editar rol",
+    "name": "Nombre",
+    "code": "Código",
+    "enabled": "Habilitado",
+    "description": "Descripción",
+    "placeholder": {
+      "name": "Escriba un nombre",
+      "code": "Escriba un código",
+      "description": "Escriba una descripción"
+    },
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "update": "Actualizar",
+    "newRole": {
+      "saveSuccess": "El rol fue creado correctamente.",
+      "saveError": "Algo salió mal. Por favor, inténtelo de nuevo."
+    },
+    "editRole": {
+      "editSuccess": "El rol fue modificado correctamente.",
+      "editError": "Algo salió mal. Por favor, inténtelo de nuevo."
+    },
+    "identityAttributesInfoPage": {
+      "title": "Lista de atributos",
+      "name": "Nombre",
+      "code": "Código",
+      "assignableToRoles": "Asignable a roles",
+      "updateTimestamp": "Fecha de última sincronización",
+      "empty": "Sin datos",
+      "filters": {
+        "name": "Nombre",
+        "code": "Código",
+        "description": "Descripción",
+        "updateTimestamp": "Seleccionar rango de fechas",
+        "updateTimestampFrom": "Fecha de inicio",
+        "updateTimestampTo": "Fecha de fin",
+        "placeholder": {
+          "name": "Escriba un nombre",
+          "code": "Escriba un código",
+          "description": "Escriba una descripción"
+        },
+        "search": "Aplicar",
+        "reset": "Restablecer"
+      }
+    },
+    "filters": {
+      "name": "Nombre",
+      "code": "Código",
+      "updateTimestamp": "Seleccionar rango de fechas",
+      "updateTimestampFrom": "Fecha de inicio",
+      "updateTimestampTo": "Fecha de fin",
+      "placeholder": {
+        "name": "Escriba un nombre",
+        "code": "Escriba un código"
+      },
+      "search": "Aplicar",
+      "reset": "Restablecer"
+    }
+  },
+  "roleRequests": {
+    "title": "Roles y solicitudes",
+    "welcomeMessage": "Actualmente no hay roles ni solicitudes de roles disponibles para este perfil. <br><br> Para solicitar un rol, haga clic en el botón de abajo y complete la información requerida. <br> Su solicitud será evaluada por un operador y procesada en consecuencia. <br> Si la solicitud es aprobada, se le asignará automáticamente el rol solicitado.",
+    "createRequest": "Crear solicitud",
+    "roleRequestModalTitle": "Nueva solicitud de rol",
+    "roleRequestModalAcceptLabel": "Enviar solicitud",
+    "label": "Roles a solicitar",
+    "saveSuccess": "Solicitud de rol enviada correctamente.",
+    "errorSave": "Algo salió mal. Por favor, inténtelo de nuevo.",
+    "deleteSuccess": "Solicitud de rol eliminada correctamente.",
+    "errorDelete": "Algo salió mal. Por favor, inténtelo de nuevo.",
+    "deleteRoleRequest": "Eliminar solicitud de rol",
+    "assignedRole": "Roles asignados actualmente",
+    "noAssignedRole": "No hay roles asignados.",
+    "empty": "Sin datos",
+    "roleRequestsTitle": "Solicitudes de roles",
+    "id": "ID",
+    "status": "Estado",
+    "creationDate": "Fecha de creación",
+    "lastUpdateDate": "Fecha de última actualización",
+    "alreadyRequested": "Ya se ha enviado una solicitud de rol para este rol.",
+    "close": "Cerrar",
+    "roleRequestModalDetailTitle": "Detalle de solicitud de rol",
+    "actions": "Acciones",
+    "viewDetail": "Mostrar detalle",
+    "noRolesAvailable": "No hay nuevos roles a los que pueda aplicar.",
+    "deleteRoleRequestModalAcceptLabel": "Cancelar",
+    "deleteRoleRequestModalTitle": "Cancelar solicitud de rol",
+    "deleteMessage": "Esta acción es irreversible, ¿desea continuar?",
+    "deleteRoleRequestModalCancelLabel": "Mantener",
+    "filters": {
+      "status": "Estado",
+      "placeholder": {
+        "status": "Seleccionar estado"
+      },
+      "open": "Abierta",
+      "approved": "Aprobada",
+      "rejected": "Rechazada",
+      "cancelled": "Cancelada",
+      "apply": "Aplicar",
+      "reset": "Restablecer"
+    },
+    "detail": {
+      "id": "ID",
+      "creationDate": "Fecha de creación",
+      "lastUpdateDate": "Fecha de última actualización",
+      "status": "Estado",
+      "rolesRequested": "Roles solicitados",
+      "rolesAssigned": "Roles asignados",
+      "reviewedBy": "Revisado por"
+    },
+    "statusValues": {
+      "OPEN": "Abierta",
+      "APPROVED": "Aprobada",
+      "REJECTED": "Rechazada",
+      "CANCELED": "Cancelada"
+    }
+  },
+  "roleRequestsManagement": {
+    "title": "Solicitudes de roles",
+    "filters": {
+      "OPEN": "Abierta",
+      "CANCELED": "Cancelada",
+      "APPROVED": "Aprobada",
+      "REJECTED": "Rechazada",
+      "from": "Desde",
+      "to": "Hasta",
+      "placeholder": {
+        "createdBy": "Escriba un correo electrónico",
+        "status": "Todas"
+      },
+      "reset": "Restablecer",
+      "search": "Buscar",
+      "title": "Filtros",
+      "createdBy": "Creado por",
+      "status": "Estado",
+      "creationDate": "Fecha de creación"
+    },
+    "table": {
+      "id": "ID",
+      "createdBy": "Creado por",
+      "status": "Estado",
+      "creationTimestamp": "Fecha de creación",
+      "lastUpdateTimestamp": "Fecha de última actualización",
+      "actions": "Acciones",
+      "empty": "Sin datos",
+      "detail": "Mostrar detalle de solicitud de rol",
+      "review": "Revisar solicitud de rol"
+    },
+    "detail": {
+      "title": "Detalles de solicitud de rol",
+      "close": "Cerrar",
+      "review": "Ir a revisión",
+      "id": "ID",
+      "createdBy": "Creado por",
+      "creationTimestamp": "Fecha de creación",
+      "lastUpdateTimestamp": "Fecha de última actualización",
+      "status": "Estado",
+      "rolesRequested": "Roles solicitados",
+      "rolesAssigned": "Roles asignados",
+      "rolesAlreadyAssigned": "Roles ya asignados",
+      "reviewedBy": "Revisado por"
+    },
+    "review": {
+      "title": "Revisión de solicitud de rol",
+      "rolesToAssign": "Seleccionar roles a asignar*",
+      "approve": "Aprobar",
+      "reject": "Rechazar",
+      "back": "Volver",
+      "successMessage": "Solicitud de rol revisada correctamente."
+    }
+  },
+  "dateRange": {
+    "start": "Inicio",
+    "end": "Fin"
+  },
+  "languageSelector": {
+    "headings":{
+      "euOfficial": "Idiomas oficiales de la UE",
+      "nonEuOfficial": "Idiomas no oficiales en la UE"
+    },
+    "languageLabels": {
+      "en": "Inglés",
+      "es": "Español",
+      "ca": "Catalán",
+      "va": "Valenciano",
+      "gl": "Gallego",
+      "eu": "Euskera"
+    }
+  },
+  "privateArea": "Área Privada",
+  "eui.CANCEL": "Cancelar",
+  "eui.OK": "Aceptar",
+  "eui.euitable.ITEMS-PER-PAGE": "Mostrar",
+  "eui.euitable.SHOWING-RANGE": "{{range}}",
+  "eui.euitable.RANGE-LABEL": "de",
+  "eui.languageSelector.modalTitle": "Seleccionar lengua"
+}

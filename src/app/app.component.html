@@ -1,0 +1,45 @@
+<eui-block-content [isBlocked]="appStarterService.isDocumentBlocked()">
+<eui-app>
+  <eui-app-toolbar>
+    <eui-toolbar>
+      <eui-toolbar-logo
+        logoUrl="assets/images/logo/ednel-full-logo.svg"
+        logoWidth="177px"
+        logoHeight="40px"
+        homeUrl="/main-home"
+        alt="Ednel - Espacio de la lengua"
+      >
+      </eui-toolbar-logo>
+      <eui-toolbar-app [appName]="'privateArea' | translate" />
+
+      <eui-toolbar-items euiPositionRight="">
+        @if (keycloak.authenticated) {
+          <eui-toolbar-item>
+            <eui-user-profile [hasWelcomeLabel]="false" avatarUrl="assets/images/user-profile-icon.svg" [reverseNameOrder]="true">
+              <eui-user-profile-menu>
+                <eui-user-profile-menu-item
+                  class="eui-u-p-s"
+                >
+                  <eui-language-selector></eui-language-selector>
+                </eui-user-profile-menu-item>
+                <eui-user-profile-menu-item
+                  class=" eui-u-p-s"
+                  (click)="logOut()"
+                  (keydown.enter)="logOut()"
+                >
+                  <eui-icon-svg
+                    icon="eui-logout-thin"
+                    fillColor="danger"
+                    class="eui-u-mr-m"
+                  ></eui-icon-svg>
+                  <span euiLabel>{{ 'common.signout' | translate }}</span>
+                </eui-user-profile-menu-item>
+              </eui-user-profile-menu>
+            </eui-user-profile>
+          </eui-toolbar-item>
+        }
+      </eui-toolbar-items>
+    </eui-toolbar>
+  </eui-app-toolbar>
+</eui-app>
+</eui-block-content>

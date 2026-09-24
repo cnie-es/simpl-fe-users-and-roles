@@ -1,0 +1,83 @@
+<eui-page>
+  <eui-page-header [label]="'editUser.title' | translate">
+  </eui-page-header>
+  <eui-page-content>
+    <eui-page-columns>
+      <eui-page-column>
+        <eui-page-column-body>
+          @if (userForm) {
+            <div [formGroup]="userForm">
+              <div euiInputGroup>
+                @let firstNameControl = userForm.get('firstName');
+                <label euiLabel for="firstName">{{ 'editUser.form.firstName' | translate }}</label>
+                <input data-testid="user_form_input_first_name" euiInputText id="firstName" formControlName="firstName" />
+                @if (firstNameControl.errors?.required && firstNameControl.touched) {
+                  <eui-feedback-message euiDanger>{{ 'editUser.required' | translate }}</eui-feedback-message>
+                }
+              </div>
+              <div euiInputGroup>
+                @let lastNameControl = userForm.get('lastName');
+                <label euiLabel for="lastName"> {{ 'editUser.form.lastName' | translate }} </label>
+                <input data-testid="user_form_input_last_name" euiInputText id="lastName" formControlName="lastName" />
+                @if (lastNameControl.errors?.required && firstNameControl.touched) {
+                  <eui-feedback-message euiDanger>{{ 'editUser.required' | translate }}</eui-feedback-message>
+                }
+              </div>
+              <div euiInputGroup>
+                @let emailControl = userForm.get('email');
+                <label euiLabel for="email">{{ 'editUser.form.email' | translate }}</label>
+                <input data-testid="user_form_input_email" euiInputText id="email" formControlName="email" />
+                @if (emailControl.errors?.required && firstNameControl.touched) {
+                  <eui-feedback-message euiDanger>{{ 'editUser.required' | translate }}</eui-feedback-message>
+                }
+                @if (emailControl.errors?.email && firstNameControl.touched) {
+                  <eui-feedback-message euiDanger>{{ 'editUser.emailValidation' | translate }}</eui-feedback-message>
+                }
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="username">{{ 'editUser.form.username' | translate }}</label>
+                <input data-testid="user_form_input_username" [readonly]="true" euiInputText id="username" formControlName="username" />
+              </div>
+
+              <div euiInputGroup>
+                <label euiLabel for="enabled">{{ 'editUser.form.status' | translate }}</label>
+                <div class="eui-u-display-flex eui-u-flex-column">
+                  <div class="eui-u-inline-flex eui-u-mb-xs">
+                    <input
+                           data-testid="user_form_input_enabled_false"
+                           euiInputRadio
+                           id="status-disabled"
+                           name="enabled"
+                           [value]="false"
+                           formControlName="enabled" />
+                    <label euiLabel for="status-disabled">{{ 'editUser.form.disabled' | translate }}</label>
+                    <input
+                           data-testid="user_form_input_enabled_true"
+                           euiInputRadio
+                           id="status-enabled"
+                           name="enabled"
+                           [value]="true"
+                           formControlName="enabled" />
+                    <label euiLabel for="status-enabled">{{ 'editUser.form.enabled' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="roles">{{ 'editUser.form.roles' | translate }}</label>
+                <eui-autocomplete data-testid="user_form_input_roles_autocomplete" [isAsync]="true" id="roles" formControlName="roles" [autocompleteData]="allRoles()"
+                                  [hasChips]="true">
+                </eui-autocomplete>
+              </div>
+            </div>
+          }
+        </eui-page-column-body>
+      </eui-page-column>
+    </eui-page-columns>
+  </eui-page-content>
+  <eui-page-footer>
+    <div class="eui-u-flex eui-u-flex-justify-content-end">
+      <button data-testid="user_form_action_cancel" [routerLink]="['/users']" class="eui-u-mr-s" euiButton euiSecondary id="cancel-action">{{ 'editUser.cancelButton' | translate }}</button>
+      <button data-testid="user_form_action_save" [disabled]="userForm?.invalid" (buttonClick)="saveUser()" euiButton euiPrimary id="save-action">{{ 'editUser.saveButton' | translate }}</button>
+    </div>
+  </eui-page-footer>
+</eui-page>

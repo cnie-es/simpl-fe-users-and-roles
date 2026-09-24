@@ -1,0 +1,53 @@
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.id' | translate}}</span>
+  <span>{{data().id}}</span>
+</div>
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.createdBy' | translate}}</span>
+  <span>{{data().createdBy}}</span>
+</div>
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.status' | translate}}</span>
+  <span>{{data().status}}</span>
+</div>
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.reviewedBy' | translate}}</span>
+  <span>{{data().reviewedBy ?? '-'}}</span>
+</div>
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.rolesRequested' | translate}}</span>
+  <span>
+    @for (role of data().rolesRequested; track role) {
+      {{role}} @if (data().rolesRequested.length > 1){;}
+    }
+  </span>
+</div>
+@if (roleAlreadyAssigned()) {
+  <div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+    <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.rolesAlreadyAssigned' | translate}}</span>
+    <span>
+    @if (roleAlreadyAssigned().length === 0) {-}
+      @for (role of roleAlreadyAssigned(); track role) {
+        {{role}} @if (roleAlreadyAssigned().length > 1){;}
+      }
+  </span>
+  </div>
+} @else {
+  <div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+    <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.rolesAssigned' | translate}}</span>
+    <span>
+    @if (data().rolesAssigned.length === 0) {-}
+      @for (role of data().rolesAssigned; track role) {
+        {{role}} @if (data().rolesAssigned.length > 1){;}
+      }
+  </span>
+  </div>
+}
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.creationTimestamp' | translate}}</span>
+  <span>{{data().creationTimestamp | date:'dd/MM/yyyy'}}</span>
+</div>
+<div class="eui-u-d-flex eui-u-flex-column eui-u-mb-s">
+  <span class="eui-u-f-bold">{{ 'roleRequestsManagement.detail.lastUpdateTimestamp' | translate}}</span>
+  <span>{{data().lastUpdateTimestamp | date:'dd/MM/yyyy'}}</span>
+</div>

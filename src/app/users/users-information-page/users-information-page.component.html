@@ -1,0 +1,119 @@
+<ng-container *transloco="let t; prefix: 'userInformationPage'">
+  <eui-page>
+    <eui-page-header [label]="t('title')">
+      <eui-page-header-action-items>
+        <button data-testid="users_header_button_createuser" euiButton euiPrimary class="eui-u-mt-s" type="button" (click)="navigateToUserCreation()">
+          <eui-icon-svg icon="eui-ecl-plus"></eui-icon-svg>
+          {{ t('newUser') }}
+        </button>
+    </eui-page-header-action-items>
+    </eui-page-header>
+    <eui-page-content>
+      <eui-page-columns>
+        <eui-page-column [isCollapsed]="true" [isCollapsible]="true" euiSizeVariant="xl" [label]="'filters.titlePlural' | translate" class="ednel-filters">
+          <eui-page-column-body>
+            <form [formGroup]="filtersForm" class="eui-u-flex eui-u-flex-column eui-u-flex-gap-s" id="filtersForm" (ngSubmit)="search()">
+              <div euiInputGroup>
+                <label euiLabel for="email">{{ t('filters.email') }}</label>
+                <input data-testid="users_filter_button_email" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="email" formControlName="email"
+                  placeholder="{{t('filters.placeholder.email')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="firstName">{{ t('filters.firstName') }}</label>
+                <input data-testid="users_filter_button_firstname" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="firstName" formControlName="firstName"
+                  placeholder="{{t('filters.placeholder.firstName')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="lastName">{{ t('filters.lastName') }}</label>
+                <input data-testid="users_filter_button_lastname" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="lastName" formControlName="lastName"
+                  placeholder="{{t('filters.placeholder.lastName')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="username">{{ t('filters.username') }}</label>
+                <input data-testid="users_filter_button_username" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="username" formControlName="username"
+                  placeholder="{{t('filters.placeholder.username')}}" />
+              </div>
+              <div class="ednel-button-group">
+                <button data-testid="users_filter_button_reset" euiButton id="reset-filters-button" [disabled]="loading()" type="button" class="eui-u-width-50"
+                  euiSecondary (click)="resetFilters()">
+                  {{ t('filters.reset') }}
+                </button>
+                <button data-testid="users_filter_button_submit" euiButton id="submit-filters-button" [disabled]="loading()" type="submit" class="eui-u-width-50"
+                  euiPrimary>
+                  {{ t('filters.search') }}
+                </button>
+              </div>
+            </form>
+          </eui-page-column-body>
+        </eui-page-column>
+
+        <eui-page-column>
+          <eui-page-column-body>
+            <lib-filter-chips (resetFilters)="resetFilters()" (removeChip)="removeChip($event)" [chips]="chips" translocoPrefix="userInformationPage"></lib-filter-chips>
+            <div class="eui-table-v2__scrollable-wrapper">
+              <table data-testid="users_table" euiTableV2 isTableResponsive [data]="data?.items ?? []" [isLoading]="loading()">
+                <ng-template euiTemplate="header">
+                  <tr>
+                    <th isSortable sortOn="email">{{ t('email') }}</th>
+                    <th>{{ t('firstName') }}</th>
+                    <th>{{ t('lastName') }}</th>
+                    <th isSortable sortOn="username">{{ t('username') }}</th>
+                    <th isSortable sortOn="status">{{ t('status') }}</th>
+                    <th>{{ t('info') }}</th>
+                  </tr>
+                </ng-template>
+                <ng-template let-row euiTemplate="body">
+                  <tr>
+                    <td [attr.data-col-label]="t('email')">{{ row.email }}</td>
+                    <td [attr.data-col-label]="t('firstName')">{{ row.firstName }}</td>
+                    <td [attr.data-col-label]="t('lastName')">{{ row.lastName }}</td>
+                    <td [attr.data-col-label]="t('username')">{{ row.username }}</td>
+                    <td [attr.data-col-label]="t('status')">{{ row.enabled ? t('enabled') : t('disabled') }}</td>
+                    <td [attr.data-col-label]="t('info')">
+                      <button data-testid="users_table_button_showuserroles" (click)="showUserRoles(row)" [euiTooltipPrimary]="true" [euiTooltip]="t('viewDetail')" id="action-detail" euiButton [euiBasicButton]="true" [euiRounded]="true" [euiIconButton]="true" euiPrimary euiSizeS >
+                        <eui-icon-svg icon="eye:sharp"></eui-icon-svg>
+                      </button>
+                      <button
+                        [euiTooltipPrimary]="true" [euiTooltip]="t('editUser')"
+                        data-testid="users_table_button_edituser"
+                        size="sm"
+                        euiButton
+                        [euiBasicButton]="true" [euiRounded]="true" [euiIconButton]="true" euiPrimary euiSizeS
+                        routerLink="edit/{{row.id}}">
+                        <eui-icon-svg set="eui" icon="eui-ecl-edit"></eui-icon-svg>
+                      </button>
+                      <button data-testid="users_table_button_deleteUser" [euiTooltipPrimary]="true" [euiTooltip]="t('deleteUser')" id="action-delete" euiButton [euiBasicButton]="true" [euiRounded]="true" [euiIconButton]="true" euiPrimary euiSizeS (click)="onDeleteUser(row)" >
+                        <eui-icon-svg set="eui" icon="eui-delete-forever"></eui-icon-svg>
+                      </button>
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template let-row euiTemplate="noData">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="6">
+                      {{ t('empty') }}
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template euiTemplate="footer">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="6">
+                      <eui-paginator hasPageNumberNavigation [length]="data?.total ?? 0" [pageSizeOptions]="[5, 10, 25, 100]"
+                        [page]="pagination.page" [pageSize]="pagination.pageSize" (pageChange)="onPageChange($event)"
+                        [hasPageNumberNavigation]="true">
+                      </eui-paginator>
+                    </td>
+                  </tr>
+                </ng-template>
+              </table>
+            </div>
+          </eui-page-column-body>
+        </eui-page-column>
+      </eui-page-columns>
+    </eui-page-content>
+  </eui-page>
+
+  <eui-dialog #dialog [title]="roleDialogData.title" [hasDismissButton]="false" [hasCloseButton]="false">
+    <app-role-list-modal [data]="roleDialogData"></app-role-list-modal>
+  </eui-dialog>
+</ng-container>

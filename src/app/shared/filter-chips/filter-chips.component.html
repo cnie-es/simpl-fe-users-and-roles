@@ -1,0 +1,17 @@
+<div *transloco="let t; prefix: translocoPrefix()" class="eui-u-display-flex eui-u-mb-m eui-u-flex-align-items-center">
+  @if(chips().length){
+    <div class="eui-u-mr-xs eui-u-p-2xs eui-u-flex-column eui-u-flex-gap-none">
+                  <span>
+                    {{ 'filters.selectedCriteria' | translate }}
+                  </span>
+      <span class="eui-u-text-link" (click)="onResetFilters()" onKeyPress>
+                    {{ 'filters.clearAll' | translate }}
+                  </span>
+    </div>
+      @for (chip of chips(); track $index) {
+        <eui-chip (remove)="onRemoveChip($event)" [id]="chip.field" [data]="{id: chip.field}" isFilled isChipRemovable class="eui-u-mr-2xs eui-u-mb-2xs">
+          <span euiLabel>{{ t('filters.' + chip.field) }}: {{ chip.value }}</span>
+        </eui-chip>
+      }
+  }
+</div>

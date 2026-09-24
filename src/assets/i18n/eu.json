@@ -1,0 +1,475 @@
+{
+  "common": {
+    "yes": "Bai",
+    "no": "Ez",
+    "signout": "Saioa itxi",
+    "actionCompleted": "Ekintza osatuta",
+    "actionFailed": "Ekintzak huts egin du",
+    "failureMessage": "Errore bat gertatu da eskaera prozesatzean. Mesedez, saiatu berriro geroago."
+  },
+  "userInformationPage": {
+    "title": "Erabiltzaileen zerrenda",
+    "email": "Posta elektronikoa",
+    "firstName": "Izena",
+    "lastName": "Abizena",
+    "username": "Erabiltzailea",
+    "status": "Egoera",
+    "enabled": "Gaituta",
+    "disabled": "Desgaituta",
+    "updateTimestamp": "Azken eguneratzearen data",
+    "info": "Ekintzak",
+    "cancel": "Itxi",
+    "userRoles": "Rolen zerrenda",
+    "newUser": "Erabiltzaile berria sortu",
+    "noRoles": "Ez dago rolik hautatutako erabiltzailearentzat.",
+    "empty": "Daturik ez",
+    "editUser": "Erabiltzailea editatu",
+    "viewDetail": "Erabiltzailearen xehetasunak ikusi",
+    "deleteUser": "Erabiltzailea ezabatu",
+    "filters": {
+      "email": "Posta elektronikoa",
+      "firstName": "Izena",
+      "lastName": "Abizena",
+      "username": "Erabiltzailea",
+      "placeholder": {
+        "email": "Idatzi posta elektronikoa",
+        "firstName": "Idatzi izena",
+        "lastName": "Idatzi abizena",
+        "username": "Idatzi erabiltzailea"
+      },
+      "search": "Aplikatu",
+      "reset": "Berrezarri"
+    }
+  },
+  "editUser": {
+    "title": "Erabiltzailea editatu",
+    "form": {
+      "email": "Posta elektronikoa",
+      "firstName": "Izena",
+      "lastName": "Abizena",
+      "username": "Erabiltzailea",
+      "roles": "Rolak",
+      "status": "Egoera",
+      "enabled": "Gaituta",
+      "disabled": "Desgaituta"
+    },
+    "cancelButton": "Utzi",
+    "saveButton": "Aldaketak gorde",
+    "saveSuccess": "Erabiltzailea eguneratuta",
+    "emailValidation": "Baliozko posta elektroniko bat izan behar du",
+    "required": "Eremu hau nahitaezkoa da eta ezin da hutsik egon"
+  },
+  "deleteUser": {
+    "title": "Erabiltzailea ezabatu",
+    "content": "Hurrengo erabiltzailea ezabatzear zaude: {{username}}. <br> Ekintza hau itzulezina da, jarraitu nahi al duzu?",
+    "saveSuccess": "Erabiltzailea ongi ezabatu da.",
+    "saveError": "Errore bat gertatu da erabiltzailea ezabatzean. Mesedez, saiatu berriro."
+  },
+  "newUser": {
+    "title": "Erabiltzaile berria",
+    "email": "Posta elektronikoa",
+    "emailPlaceholder": "Posta elektronikoa",
+    "firstName": "Izena",
+    "firstNamePlaceholder": "Izena",
+    "lastName": "Abizena",
+    "lastNamePlaceholder": "Abizena",
+    "username": "Erabiltzailea",
+    "usernamePlaceholder": "Erabiltzailea",
+    "password": "Pasahitza",
+    "passwordPlaceholder": "Pasahitza",
+    "confirmPassword": "Pasahitza berretsi",
+    "confirmPasswordPlaceholder": "Pasahitza berretsi",
+    "roles": "Rolak",
+    "rolesPlaceholder": "Rolak",
+    "rolesEmpty": "Ez dago rolik eskuragarri",
+    "button": "Erabiltzaile berria sortu",
+    "saveSuccess": "Erabiltzaile berria ongi sortu da",
+    "emailValidation": "Baliozko posta elektroniko bat izan behar du",
+    "required": "Eremu hau nahitaezkoa da eta ezin da hutsik egon",
+    "noMatch": "Pasahitzak ez datoz bat",
+    "passwordRules": {
+      "mustBeBetween": "Pasahitzak izan behar du",
+      "passwordLength": "{{start}} eta {{end}} karaktere artekoa",
+      "containsAtLeast": "eta gutxienez eduki behar du",
+      "uppercaseLetters": "{{num}} letra larri (A-Z)",
+      "lowercaseLetters": "{{num}} letra xehe (a-z)",
+      "numbers": "{{num}} zenbaki (0-9)",
+      "specialChars": "{{num}} karaktere berezi ({{specialCharsSample}} etab).",
+      "forbidden": "Pasahitzak ez du eduki behar {{num}} karaktere baino gehiagoko posta elektronikoaren, erakundearen izenaren, izenaren, abizenaren edo erabiltzailearen zatirik."
+    }
+  },
+  "landing-pages": {
+    "unauthorized": {
+      "title": "Rolen araberako sarbide muga",
+      "message": "Sarbidea ukatuta. Zure rolak ez du eduki hau ikusteko baimenik."
+    },
+    "error-page": {
+      "title": "Errorea",
+      "message": {
+        "400": "Zerbitzariak ezin izan du zure eskaera ulertu, sintaxi edo parametro baliogabeak direla eta.",
+        "401": "Ez zaude baimenduta baliabide honetara sartzeko. Ziurtatu kredentzial egokiekin saioa hasi duzula.",
+        "403": "Sarbidea ukatuta. Zure rolak ez du eduki hau ikusteko baimenik.",
+        "404": "Bilatzen duzun baliabidea ez da zerbitzarian aurkitu.",
+        "500": "Zerbitzariak barne-errore bat aurkitu du eta ezin izan du zure eskaera osatu. Mesedez, saiatu berriro geroago.",
+        "501": "Zerbitzariak ez du eskaria osatzeko beharrezko funtzionaltasuna onartzen.",
+        "502": "Zerbitzariak, atebide gisa jardunez, erantzun baliogabe bat jaso du upstream zerbitzaritik.",
+        "503": "Zerbitzaria ez dago eskuragarri une honetan, gainkargatuta dagoelako edo mantentze-lanak egiten ari direlako. Mesedez, saiatu berriro geroago.",
+        "504": "Zerbitzariak, atebide gisa jardunez, ez du erantzun eguneraturik jaso upstream zerbitzaritik.",
+        "505": "Zerbitzariak ez du eskaeran erabilitako HTTP protokoloaren bertsioa onartzen.",
+        "508": "Zerbitzariak begizta bat detektatu du eskaera prozesatzean.",
+        "511": "Bezeroak sarera sartzeko autentifikatu behar du."
+      }
+    }
+  },
+  "rolesInfoPage": {
+    "empty": "Daturik ez",
+    "title": "Rolen zerrenda",
+    "name": "Izena",
+    "description": "Deskribapena",
+    "code": "Kodea",
+    "enabled": "Gaituta",
+    "builtIn": "Integratuta",
+    "detail": "Ekintza",
+    "showDetail": "Xehetasunak erakutsi",
+    "editRole": "Rola editatu",
+    "deleteRole": "Rola ezabatu",
+    "newRole": "Rol berria sortu",
+    "cancel": "Utzi",
+    "save": "Gorde",
+    "update": "Eguneratu",
+    "filters": {
+      "name": "Izena",
+      "description": "Deskribapena",
+      "code": "Kodea",
+      "placeholder": {
+        "name": "Idatzi izena",
+        "description": "Idatzi deskribapena",
+        "code": "Idatzi kodea"
+      },
+      "search": "Aplikatu",
+      "reset": "Berrezarri"
+    }
+  },
+  "roleDescriptions": {
+    "T2IAA_M": "Erregistro-prozedura bera definitzeaz eta aldatzeaz arduratzen den erabiltzailea: nahitaezko dokumentuak eta erregistro-prozesuak jarraituko dituen arauak ezartzen ditu.",
+    "NOTARY": "2. mailako (Tier 2) baimen-operadorea: erregistro-eskaerak artatzeaz eta haien jarraipena egiteaz arduratzen da. Dokumentazio gehigarria eskatu, eskaerak iruzkindu eta onartu edo ezetsi ditzake.",
+    "ONBOARDER_M": "2. mailako (Tier 2) konfigurazioaren administratzailea: agente baten instalazioaren 2. mailako konfigurazioa amaitzeaz arduratzen da.",
+    "IATTR_M": "Datu-espazioaren Gobernantza Agintaritzan soilik dagoen rola. Identitate-atributuen bizi-ziklo osoa hartzen du bere gain, sortu eta kudeatzetik parte-hartzaileei esleitzeraino.",
+    "T1UAR_M": "1. mailako (Tier 1) erabiltzaile eta rolen kudeatzailea. Rol lokalak eta datu-espazioko identitate-atributuak kudeatzen ditu: definitu eta parte-hartzaile motei esleitzen dizkie, esleigarriak diren zehaztuz.",
+    "APPLICANT": "Datu-espazioaren erregistro-gune publikoaren bidez izena ematen duten parte-hartzaileen erregistro-eskaerak kudeatzen dituen azken erabiltzailea. Erregistro-eskaerak sortzen ditu eta 2. mailako (NOTARY) baimen-elkarrekintzei erantzuten die onarpena lortu arte.",
+    "Ro-MU-CA": "XFSC Katalogo Federatuan definitutako rola: Katalogoaren administratzailea.",
+    "Ro-MU-A": "XFSC Katalogo Federatuan definitutako rola: Parte-hartzailearen administratzailea.",
+    "Ro-SD-A": "XFSC Katalogo Federatuan definitutako rola: Autodeskribapenen (Self-Description) administratzailea.",
+    "Ro-Pa-A": "XFSC Katalogo Federatuan definitutako rola: Parte-hartzailearen erabiltzaileen administratzailea.",
+    "SD_PUBLISHER": "Katalogoan autodeskribapena (Self-Description) sortzeaz eta argitaratzeaz arduratzen den erabiltzailearen rola.",
+    "SD_CONSUMER": "Datu-kontsumitzailearentzako 1. mailako (Tier 1) rola.",
+    "GA_SCHEMA_ADMIN": "Eskema Kudeatzailearen (Schema Manager) administratzailea. Eskemak administratzeko 1. mailako (Tier 1) rola.",
+    "GA_SCHEMA_VIEWER": "Eskema Kudeatzailearen (Schema Manager) ikustailea. Eskemak kontsultatzeko 1. mailako (Tier 1) rola.",
+    "KIBANA_BUSINESS_USER": "Kibanako negozio-erabiltzailea. Kibanara negozio-erabiltzaile gisa sartzeko aukera ematen du (Kibanako erabiltzaile lokal bati lotuta).",
+    "KIBANA_ADMIN": "Kibanako administratzailea. Kibanara administratzaile gisa sartzeko aukera ematen du (Kibanako erabiltzaile lokal bati lotuta).",
+    "ORCH_DEVELOPER": "Datu-orkestrazioko garatzailea. Datuak orkestratzeko lan-fluxuak eta zerbitzuak garatzeko aukera ematen du.",
+    "ORCH_ADMIN": "Datu-orkestrazioko administratzailea. Orkestrazioa administratzen eta kudeatzen du: atazak programatzea, lan-fluxuak berriro saiatzea eta monitorizazioa.",
+    "INFRA_ADMIN": "Azpiegitura-hornitzailearen administratzailea. Azpiegitura-hornitzailearen hodeiko baliabide guztiak kudeatzen ditu.",
+    "INFRA_DEPLOYER": "Azpiegitura-hornitzailearen hedatzailea. Azpiegitura-hornitzailearen hodeiko baliabideak aktibatzen eta desaktibatzen ditu.",
+    "G-Administrator": "Gobernantza Agintaritzaren administratzailea. Datu-espazio osoa kudeatzen eta administratzen du.",
+    "G-Content Editor": "Gobernantza Agintaritzaren eduki-editorea. Atari publikoaren edukia kudeatzen du.",
+    "G-Operator": "Gobernantza Agintaritzaren operadorea. Datu-espazioaren eguneroko kudeaketa operatiboaz arduratzen da.",
+    "G-Portal Manager": "Gobernantza Agintaritzaren atariaren kudeatzailea. Atari publikoa kudeatzen du, bai egitura bai edukia.",
+    "G-Tech Operator": "Gobernantza Agintaritzaren operadore teknikoa. Datu-espazioaren azpiegitura teknikoaren funtzionamenduaz eta mantentze-lanez arduratzen da.",
+    "P-Connector Administrator": "Parte-hartzailearen konektorearen administratzailea. Parte-hartzailearen EDNEL konektoreak instalatzen eta kudeatzen ditu, eta parte-hartzailearen erabiltzaileen administratzailea izendatzen du.",
+    "P-Data Consumer": "Parte-hartzailearen datu-kontsumitzailea. Aktiboen katalogoa arakatu eta bertan bilatu dezake, eta doako datuak kontsumitu, aplikatzekoak diren politikak betez.",
+    "P-Data Offer Manager": "Parte-hartzailearen datu-eskaintzen kudeatzailea. Parte-hartzailearen aktiboen politikak eta prezioak definitzen ditu, eta eskaintzak sortzen ditu.",
+    "P-Data Provider": "Parte-hartzailearen datu-hornitzailea. Parte-hartzailearen aktiboen metadatuak sortu, editatu eta ezabatzen ditu.",
+    "P-Financial Administrator": "Parte-hartzailearen administratzaile finantzarioa. Finantza-eragiketez arduratzen da: fakturazioa eta ordainketen kudeaketa.",
+    "P-Legal Representative": "Parte-hartzaileak EDNELen parte hartzeko eskaera egiteko eta haren legezko ordezkari gisa jarduteko izendatutako pertsona; adibidez, Gobernantza Agintaritzarekiko harremanetarako pertsona gisa.",
+    "P-User Administrator": "Parte-hartzailearen erabiltzaileen administratzailea. Parte-hartzailearen erabiltzaileak kudeatzen ditu: sortu, editatu eta desaktibatu egiten ditu, eta rolak esleitzen dizkie, P-Legal Representative eta P-Connector Administrator rolak izan ezik."
+  },
+  "roleDetail": {
+    "title": "Rolaren xehetasunak",
+    "roleName": "Rolaren izena",
+    "roleDescription": "Rolaren deskribapena",
+    "empty": "Daturik ez",
+    "resetAttributes": "Berrezarri",
+    "saveAttributes": "Gorde",
+    "saveChanges": "Aldaketak gorde",
+    "messageChanges": "Honek rol honen atributuak aldatuko ditu, eta horrek erabiltzaile askori eragin diezaieke. Jarraitu nahi al duzu?",
+    "disabledExplanation": "Atributu hau ezin da hautatu, ez dagoelako partaideari esleituta, ezta rol bati eslei dakiokeena ere.",
+    "updateSuccessMessage": "Rolaren atributuak ongi aldatu dira",
+    "updateErrorMessage": "Ezin izan dira aldaketak gorde. Mesedez, saiatu berriro geroago.",
+    "filters": {
+      "name": "Izena",
+      "code": "Kodea",
+      "updateTimestamp": "Data-tartea hautatu",
+      "updateTimestampFrom": "Hasiera-data",
+      "updateTimestampTo": "Amaiera-data",
+      "placeholder": {
+        "name": "Idatzi izena",
+        "code": "Idatzi kodea"
+      },
+      "search": "Aplikatu",
+      "reset": "Berrezarri"
+    },
+    "identityAttributesInfoPage": {
+      "title": "Atributuen zerrenda",
+      "name": "Izena",
+      "code": "Kodea",
+      "assignableToRoles": "Rolei esleigarria",
+      "updateTimestamp": "Azken sinkronizazioaren data"
+    }
+  },
+  "filters": {
+    "title": "Iragazkia",
+    "titlePlural": "Iragazkiak",
+    "selectColumn": "Zutabea hautatu",
+    "statusPlaceholder": "Balioa hautatu",
+    "statusEmpty": "---",
+    "emailPlaceholder": "posta elektronikoa",
+    "reset": "Berrezarri",
+    "apply": "Aplikatu",
+    "name": "Izena",
+    "description": "Deskribapena",
+    "code": "Kodea",
+    "organization": "Partaidearen izena",
+    "participantType": "Partaide mota",
+    "email": "Posta elektronikoa",
+    "onboardingDate": "Sarrera-data",
+    "updateTimestamp": "Azken eguneratzearen data",
+    "firstName": "Izena",
+    "lastName": "Abizena",
+    "username": "Erabiltzailea",
+    "selectedCriteria": "Hautatutako irizpideak",
+    "clearAll": "Guztiak garbitu"
+  },
+  "identityAttributesInfoPage": {
+    "title": "Atributuen zerrenda",
+    "name": "Izena",
+    "code": "Kodea",
+    "assignableToRoles": "Rolei esleigarria",
+    "updateTimestamp": "Azken sinkronizazioaren data",
+    "empty": "Daturik ez",
+    "sync": {
+      "button": "Identitate-atributuak sinkronizatu",
+      "success": "Atributuen tokiko kopia ongi sinkronizatu da.",
+      "error": "Zerbait gaizki joan da. Mesedez, saiatu berriro geroago."
+    },
+    "filters": {
+      "name": "Izena",
+      "code": "Kodea",
+      "description": "Deskribapena",
+      "updateTimestamp": "Data-tartea hautatu",
+      "updateTimestampFrom": "Hasiera-data",
+      "updateTimestampTo": "Amaiera-data",
+      "placeholder": {
+        "name": "Idatzi izena",
+        "code": "Idatzi kodea",
+        "description": "Idatzi deskribapena"
+      },
+      "search": "Aplikatu",
+      "reset": "Berrezarri"
+    }
+  },
+  "deleteRole": {
+    "title": "Rola ezabatu",
+    "content": "Hurrengo rola ezabatzear zaude: <br> {{roleName}}. <br><br> Ekintza hau itzulezina da, jarraitu nahi al duzu?",
+    "deleteButton": "Ezabatu",
+    "saveSuccess": "Rola ongi ezabatu da.",
+    "saveError": "Zerbait gaizki joan da. Mesedez, saiatu berriro."
+  },
+  "newEditRole": {
+    "title": "Rol berria sortu",
+    "titleEdit": "Rola editatu",
+    "name": "Izena",
+    "code": "Kodea",
+    "enabled": "Gaituta",
+    "description": "Deskribapena",
+    "placeholder": {
+      "name": "Idatzi izena",
+      "code": "Idatzi kodea",
+      "description": "Idatzi deskribapena"
+    },
+    "cancel": "Utzi",
+    "save": "Gorde",
+    "update": "Eguneratu",
+    "newRole": {
+      "saveSuccess": "Rola ongi sortu da.",
+      "saveError": "Zerbait gaizki joan da. Mesedez, saiatu berriro."
+    },
+    "editRole": {
+      "editSuccess": "Rola ongi aldatu da.",
+      "editError": "Zerbait gaizki joan da. Mesedez, saiatu berriro."
+    },
+    "identityAttributesInfoPage": {
+      "title": "Atributuen zerrenda",
+      "name": "Izena",
+      "code": "Kodea",
+      "assignableToRoles": "Rolei esleigarria",
+      "updateTimestamp": "Azken sinkronizazioaren data",
+      "empty": "Daturik ez",
+      "filters": {
+        "name": "Izena",
+        "code": "Kodea",
+        "description": "Deskribapena",
+        "updateTimestamp": "Data-tartea hautatu",
+        "updateTimestampFrom": "Hasiera-data",
+        "updateTimestampTo": "Amaiera-data",
+        "placeholder": {
+          "name": "Idatzi izena",
+          "code": "Idatzi kodea",
+          "description": "Idatzi deskribapena"
+        },
+        "search": "Aplikatu",
+        "reset": "Berrezarri"
+      }
+    },
+    "filters": {
+      "name": "Izena",
+      "code": "Kodea",
+      "updateTimestamp": "Data-tartea hautatu",
+      "updateTimestampFrom": "Hasiera-data",
+      "updateTimestampTo": "Amaiera-data",
+      "placeholder": {
+        "name": "Idatzi izena",
+        "code": "Idatzi kodea"
+      },
+      "search": "Aplikatu",
+      "reset": "Berrezarri"
+    }
+  },
+  "roleRequests": {
+    "title": "Rolak eta eskaerak",
+    "welcomeMessage": "Gaur egun ez dago profil honentzako rolik edo rol-eskaerapik eskuragarri. <br><br> Rol bat eskatzeko, egin klik beheko botoian eta bete beharrezko informazioa. <br> Zure eskaera operadore batek ebaluatuko du eta horren arabera prozesatuko da. <br> Eskaera onartzen bada, eskatutako rola automatikoki esleituko zaizu.",
+    "createRequest": "Eskaera sortu",
+    "roleRequestModalTitle": "Rol-eskaera berria",
+    "roleRequestModalAcceptLabel": "Eskaera bidali",
+    "label": "Eskatzeko rolak",
+    "saveSuccess": "Rol-eskaera ongi bidali da.",
+    "errorSave": "Zerbait gaizki joan da. Mesedez, saiatu berriro.",
+    "deleteSuccess": "Rol-eskaera ongi ezabatu da.",
+    "errorDelete": "Zerbait gaizki joan da. Mesedez, saiatu berriro.",
+    "deleteRoleRequest": "Rol-eskaera ezabatu",
+    "assignedRole": "Unean esleitutako rolak",
+    "noAssignedRole": "Ez dago rolik esleituta.",
+    "empty": "Daturik ez",
+    "roleRequestsTitle": "Rol-eskaerak",
+    "id": "ID",
+    "status": "Egoera",
+    "creationDate": "Sorrera-data",
+    "lastUpdateDate": "Azken eguneratzearen data",
+    "alreadyRequested": "Jada bidali da rol-eskaera rol honentzat.",
+    "close": "Itxi",
+    "roleRequestModalDetailTitle": "Rol-eskaerraren xehetasunak",
+    "actions": "Ekintzak",
+    "viewDetail": "Xehetasunak erakutsi",
+    "noRolesAvailable": "Ez dago eskatu daitezkeen rol berririk.",
+    "deleteRoleRequestModalAcceptLabel": "Utzi",
+    "deleteRoleRequestModalTitle": "Rol-eskaera utzi",
+    "deleteMessage": "Ekintza hau itzulezina da, jarraitu nahi al duzu?",
+    "deleteRoleRequestModalCancelLabel": "Mantendu",
+    "filters": {
+      "status": "Egoera",
+      "placeholder": {
+        "status": "Egoera hautatu"
+      },
+      "open": "Irekia",
+      "approved": "Onartua",
+      "rejected": "Ukatua",
+      "cancelled": "Utzita",
+      "apply": "Aplikatu",
+      "reset": "Berrezarri"
+    },
+    "detail": {
+      "id": "ID",
+      "creationDate": "Sorrera-data",
+      "lastUpdateDate": "Azken eguneratzearen data",
+      "status": "Egoera",
+      "rolesRequested": "Eskatutako rolak",
+      "rolesAssigned": "Esleitutako rolak",
+      "reviewedBy": "Berrikusi duena"
+    },
+    "statusValues": {
+      "OPEN": "Irekia",
+      "APPROVED": "Onartua",
+      "REJECTED": "Ukatua",
+      "CANCELED": "Utzita"
+    }
+  },
+  "roleRequestsManagement": {
+    "title": "Rol-eskaerak",
+    "filters": {
+      "OPEN": "Irekia",
+      "CANCELED": "Utzita",
+      "APPROVED": "Onartua",
+      "REJECTED": "Ukatua",
+      "from": "Nondik",
+      "to": "Nora",
+      "placeholder": {
+        "createdBy": "Idatzi posta elektronikoa",
+        "status": "Guztiak"
+      },
+      "reset": "Berrezarri",
+      "search": "Bilatu",
+      "title": "Iragazkiak",
+      "createdBy": "Sortzailea",
+      "status": "Egoera",
+      "creationDate": "Sorrera-data"
+    },
+    "table": {
+      "id": "ID",
+      "createdBy": "Sortzailea",
+      "status": "Egoera",
+      "creationTimestamp": "Sorrera-data",
+      "lastUpdateTimestamp": "Azken eguneratzearen data",
+      "actions": "Ekintzak",
+      "empty": "Daturik ez",
+      "detail": "Rol-eskaerraren xehetasunak erakutsi",
+      "review": "Rol-eskaera berrikusi"
+    },
+    "detail": {
+      "title": "Rol-eskaerraren xehetasunak",
+      "close": "Itxi",
+      "review": "Berrikuspena egin",
+      "id": "ID",
+      "createdBy": "Sortzailea",
+      "creationTimestamp": "Sorrera-data",
+      "lastUpdateTimestamp": "Azken eguneratzearen data",
+      "status": "Egoera",
+      "rolesRequested": "Eskatutako rolak",
+      "rolesAssigned": "Esleitutako rolak",
+      "rolesAlreadyAssigned": "Jadanik esleitutako rolak",
+      "reviewedBy": "Berrikusi duena"
+    },
+    "review": {
+      "title": "Rol-eskaerraren berrikuspena",
+      "rolesToAssign": "Esleitu beharreko rolak hautatu*",
+      "approve": "Onartu",
+      "reject": "Ukatu",
+      "back": "Itzuli",
+      "successMessage": "Rol-eskaera ongi berrikusi da."
+    }
+  },
+  "dateRange": {
+    "start": "Hasiera",
+    "end": "Amaiera"
+  },
+  "languageSelector": {
+    "headings":{
+      "euOfficial": "EBko hizkuntza ofizialak",
+      "nonEuOfficial": "EBkoak ez diren hizkuntzak"
+    },
+    "languageLabels": {
+      "en": "Ingelesa",
+      "es": "Gaztelania",
+      "ca": "Katalana",
+      "va": "Valentziera",
+      "gl": "Galiziera",
+      "eu": "Euskara"
+    }
+  },
+  "privateArea": "Eremu Pribatua",
+  "eui.CANCEL": "Utzi",
+  "eui.OK": "Ados",
+  "eui.euitable.ITEMS-PER-PAGE": "Erakutsi",
+  "eui.euitable.SHOWING-RANGE": "{{range}}",
+  "eui.euitable.RANGE-LABEL": "tik",
+  "eui.languageSelector.modalTitle": "Hizkuntza hautatu"
+}

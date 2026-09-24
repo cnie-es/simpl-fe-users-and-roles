@@ -1,0 +1,1 @@
+This component can be deployed either on Kubernetes (refer to the [Deployment Guide](../deployment-guide/README.md)) or run locally (refer to the project’s [README](../../README.md) for setup instructions).

@@ -1,0 +1,17 @@
+import { inject, Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Translation, TranslocoLoader } from "@jsverse/transloco";
+
+@Injectable({
+  providedIn: "root",
+})
+export class I18nService implements TranslocoLoader {
+  private readonly http = inject(HttpClient);
+
+  // Cache Busting
+  getTranslation(lang: string) {
+    return this.http.get<Translation>(
+      `assets/i18n/${lang}.json?v=${Date.now()}`
+    );
+  }
+}

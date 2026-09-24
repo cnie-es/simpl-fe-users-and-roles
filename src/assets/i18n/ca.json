@@ -1,0 +1,475 @@
+{
+  "common": {
+    "yes": "Sí",
+    "no": "No",
+    "signout": "Tancar sessió",
+    "actionCompleted": "Acció completada",
+    "actionFailed": "Acció fallida",
+    "failureMessage": "S'ha produït un error en processar la sol·licitud. Si us plau, torneu-ho a intentar més tard."
+  },
+  "userInformationPage": {
+    "title": "Llista d'usuaris",
+    "email": "Correu electrònic",
+    "firstName": "Nom",
+    "lastName": "Cognom",
+    "username": "Usuari",
+    "status": "Estat",
+    "enabled": "Habilitat",
+    "disabled": "Deshabilitat",
+    "updateTimestamp": "Data de darrera actualització",
+    "info": "Accions",
+    "cancel": "Tancar",
+    "userRoles": "Llista de rols",
+    "newUser": "Crear nou usuari",
+    "noRoles": "No hi ha rols per a l'usuari seleccionat.",
+    "empty": "Sense dades",
+    "editUser": "Editar usuari",
+    "viewDetail": "Veure detalls de l'usuari",
+    "deleteUser": "Eliminar usuari",
+    "filters": {
+      "email": "Correu electrònic",
+      "firstName": "Nom",
+      "lastName": "Cognom",
+      "username": "Usuari",
+      "placeholder": {
+        "email": "Escriviu un correu electrònic",
+        "firstName": "Escriviu un nom",
+        "lastName": "Escriviu un cognom",
+        "username": "Escriviu un usuari"
+      },
+      "search": "Aplicar",
+      "reset": "Restablir"
+    }
+  },
+  "editUser": {
+    "title": "Editar usuari",
+    "form": {
+      "email": "Correu electrònic",
+      "firstName": "Nom",
+      "lastName": "Cognom",
+      "username": "Usuari",
+      "roles": "Rols",
+      "status": "Estat",
+      "enabled": "Habilitat",
+      "disabled": "Deshabilitat"
+    },
+    "cancelButton": "Cancel·lar",
+    "saveButton": "Desar canvis",
+    "saveSuccess": "Usuari actualitzat correctament",
+    "emailValidation": "Ha de ser un correu electrònic vàlid",
+    "required": "El camp és obligatori i no pot estar buit"
+  },
+  "deleteUser": {
+    "title": "Eliminar usuari",
+    "content": "Esteu a punt d'eliminar l'usuari següent: {{username}}. <br> Aquesta acció és irreversible, voleu continuar?",
+    "saveSuccess": "Usuari eliminat correctament.",
+    "saveError": "S'ha produït un error en eliminar l'usuari. Si us plau, torneu-ho a intentar."
+  },
+  "newUser": {
+    "title": "Nou usuari",
+    "email": "Correu electrònic",
+    "emailPlaceholder": "Correu electrònic",
+    "firstName": "Nom",
+    "firstNamePlaceholder": "Nom",
+    "lastName": "Cognom",
+    "lastNamePlaceholder": "Cognom",
+    "username": "Usuari",
+    "usernamePlaceholder": "Usuari",
+    "password": "Contrasenya",
+    "passwordPlaceholder": "Contrasenya",
+    "confirmPassword": "Confirmació de contrasenya",
+    "confirmPasswordPlaceholder": "Confirmar contrasenya",
+    "roles": "Rols",
+    "rolesPlaceholder": "Rols",
+    "rolesEmpty": "No hi ha rols disponibles",
+    "button": "Crear nou usuari",
+    "saveSuccess": "Nou usuari creat correctament",
+    "emailValidation": "Ha de ser un correu electrònic vàlid",
+    "required": "El camp és obligatori i no pot estar buit",
+    "noMatch": "Les contrasenyes no coincideixen",
+    "passwordRules": {
+      "mustBeBetween": "La contrasenya ha de tenir entre",
+      "passwordLength": "{{start}} i {{end}} caràcters",
+      "containsAtLeast": "i contenir almenys",
+      "uppercaseLetters": "{{num}} lletra majúscula (A-Z)",
+      "lowercaseLetters": "{{num}} lletra minúscula (a-z)",
+      "numbers": "{{num}} número (0-9)",
+      "specialChars": "{{num}} caràcter especial ({{specialCharsSample}} etc).",
+      "forbidden": "La contrasenya no ha de contenir parts del correu electrònic, nom d'organització, nom, cognom o usuari de més de {{num}} caràcters."
+    }
+  },
+  "landing-pages": {
+    "unauthorized": {
+      "title": "Accés restringit per rol",
+      "message": "Accés denegat. El vostre rol no té permisos per veure aquest contingut."
+    },
+    "error-page": {
+      "title": "Error",
+      "message": {
+        "400": "El servidor no ha pogut entendre la vostra sol·licitud a causa d'una sintaxi o paràmetres no vàlids.",
+        "401": "No esteu autoritzat per accedir a aquest recurs. Assegureu-vos d'haver iniciat sessió amb les credencials correctes.",
+        "403": "Accés denegat. El vostre rol no té permisos per veure aquest contingut.",
+        "404": "El recurs que cerqueu no s'ha trobat al servidor.",
+        "500": "El servidor ha trobat un error intern i no ha pogut completar la vostra sol·licitud. Si us plau, torneu-ho a intentar més tard.",
+        "501": "El servidor no admet la funcionalitat necessària per completar la sol·licitud.",
+        "502": "El servidor, actuant com a passarel·la, ha rebut una resposta no vàlida del servidor upstream.",
+        "503": "El servidor no està disponible actualment a causa de sobrecàrrega o manteniment. Si us plau, torneu-ho a intentar més tard.",
+        "504": "El servidor, actuant com a passarel·la, no ha rebut una resposta oportuna del servidor upstream.",
+        "505": "El servidor no admet la versió del protocol HTTP utilitzada en la sol·licitud.",
+        "508": "El servidor ha detectat un bucle en processar la sol·licitud.",
+        "511": "El client s'ha d'autenticar per obtenir accés a la xarxa."
+      }
+    }
+  },
+  "rolesInfoPage": {
+    "empty": "Sense dades",
+    "title": "Llista de rols",
+    "name": "Nom",
+    "description": "Descripció",
+    "code": "Codi",
+    "enabled": "Habilitat",
+    "builtIn": "Integrat",
+    "detail": "Acció",
+    "showDetail": "Mostrar detall",
+    "editRole": "Editar rol",
+    "deleteRole": "Eliminar rol",
+    "newRole": "Crear nou rol",
+    "cancel": "Cancel·lar",
+    "save": "Desar",
+    "update": "Actualitzar",
+    "filters": {
+      "name": "Nom",
+      "description": "Descripció",
+      "code": "Codi",
+      "placeholder": {
+        "name": "Escriviu un nom",
+        "description": "Escriviu una descripció",
+        "code": "Escriviu un codi"
+      },
+      "search": "Aplicar",
+      "reset": "Restablir"
+    }
+  },
+  "roleDescriptions": {
+    "T2IAA_M": "Usuari responsable de definir i modificar el mateix procediment d'alta (onboarding), com ara la configuració dels documents obligatoris i les regles que seguirà el procés d'alta.",
+    "NOTARY": "Operador d'autorització de Nivell 2 (Tier 2), encarregat d'atendre les sol·licituds d'alta i fer-ne el seguiment. Pot demanar documentació addicional, comentar les sol·licituds i aprovar-les o rebutjar-les.",
+    "ONBOARDER_M": "Administrador de configuració de Nivell 2 (Tier 2), encarregat de finalitzar la configuració de Nivell 2 de la instal·lació d'un agent.",
+    "IATTR_M": "Rol present únicament a l'Autoritat de Governança de l'espai de dades. Cobreix tot el cicle de vida dels atributs d'identitat, des de la seva creació i gestió fins a l'assignació als participants.",
+    "T1UAR_M": "Gestor d'usuaris i rols de Nivell 1 (Tier 1). Gestiona els rols locals i els atributs d'identitat de l'espai de dades: els defineix i els assigna als tipus de participant, determinant si es poden assignar.",
+    "APPLICANT": "Usuari final que gestiona les sol·licituds d'alta dels participants que es registren a través del lloc públic d'alta de l'espai de dades. Crea les sol·licituds d'alta i respon a les interaccions d'autorització de Nivell 2 (NOTARY) fins a aconseguir l'aprovació.",
+    "Ro-MU-CA": "Rol definit al Catàleg Federat XFSC: Administrador del catàleg.",
+    "Ro-MU-A": "Rol definit al Catàleg Federat XFSC: Administrador de participant.",
+    "Ro-SD-A": "Rol definit al Catàleg Federat XFSC: Administrador d'autodescripcions (Self-Description).",
+    "Ro-Pa-A": "Rol definit al Catàleg Federat XFSC: Administrador d'usuaris del participant.",
+    "SD_PUBLISHER": "Rol de l'usuari responsable de crear i publicar l'autodescripció (Self-Description) al catàleg.",
+    "SD_CONSUMER": "Rol de Nivell 1 (Tier 1) per al consumidor de dades.",
+    "GA_SCHEMA_ADMIN": "Administrador del Gestor d'Esquemes (Schema Manager). Rol de Nivell 1 (Tier 1) per a l'administració d'esquemes.",
+    "GA_SCHEMA_VIEWER": "Consultor del Gestor d'Esquemes (Schema Manager). Rol de Nivell 1 (Tier 1) per a la consulta d'esquemes.",
+    "KIBANA_BUSINESS_USER": "Usuari de negoci de Kibana. Permet accedir a Kibana com a usuari de negoci (vinculat a un usuari local de Kibana).",
+    "KIBANA_ADMIN": "Administrador de Kibana. Permet accedir a Kibana com a administrador (vinculat a un usuari local de Kibana).",
+    "ORCH_DEVELOPER": "Desenvolupador d'orquestració de dades. Permet desenvolupar fluxos de treball i serveis d'orquestració de dades.",
+    "ORCH_ADMIN": "Administrador d'orquestració de dades. Administra i gestiona l'orquestració: programació de tasques, reintent de fluxos de treball i monitoratge.",
+    "INFRA_ADMIN": "Administrador del proveïdor d'infraestructura. Gestiona tots els recursos al núvol del proveïdor d'infraestructura.",
+    "INFRA_DEPLOYER": "Desplegador del proveïdor d'infraestructura. Activa i desactiva els recursos al núvol del proveïdor d'infraestructura.",
+    "G-Administrator": "Administrador de l'Autoritat de Governança. Gestiona i administra tot l'espai de dades.",
+    "G-Content Editor": "Editor de continguts de l'Autoritat de Governança. Gestiona el contingut del portal públic.",
+    "G-Operator": "Operador de l'Autoritat de Governança. Responsable de la gestió operativa diària de l'espai de dades.",
+    "G-Portal Manager": "Gestor del portal de l'Autoritat de Governança. Gestiona el portal públic, tant la seva estructura com el seu contingut.",
+    "G-Tech Operator": "Operador tècnic de l'Autoritat de Governança. Responsable de l'operació i el manteniment de la infraestructura tècnica de l'espai de dades.",
+    "P-Connector Administrator": "Administrador del connector del participant. Instal·la i gestiona els connectors EDNEL del participant i designa l'administrador d'usuaris del participant.",
+    "P-Data Consumer": "Consumidor de dades del participant. Pot explorar i cercar al catàleg d'actius i consumir dades gratuïtes complint les polítiques aplicables.",
+    "P-Data Offer Manager": "Gestor d'ofertes de dades del participant. Defineix les polítiques i els preus dels actius del participant i crea les ofertes.",
+    "P-Data Provider": "Proveïdor de dades del participant. Crea, edita i elimina les metadades dels actius del participant.",
+    "P-Financial Administrator": "Administrador financer del participant. S'encarrega de les operacions financeres: facturació i gestió de pagaments.",
+    "P-Legal Representative": "Persona designada per l'entitat participant per sol·licitar la participació a EDNEL i actuar com a representant legal seu, per exemple com a punt de contacte amb l'Autoritat de Governança.",
+    "P-User Administrator": "Administrador d'usuaris del participant. Gestiona els usuaris del participant: els crea, els edita i els desactiva, i els assigna rols, llevat dels de P-Legal Representative i P-Connector Administrator."
+  },
+  "roleDetail": {
+    "title": "Detall del rol",
+    "roleName": "Nom del rol",
+    "roleDescription": "Descripció del rol",
+    "empty": "Sense dades",
+    "resetAttributes": "Restablir",
+    "saveAttributes": "Desar",
+    "saveChanges": "Desar canvis",
+    "messageChanges": "Això canviarà els atributs d'aquest rol, la qual cosa pot afectar molts usuaris. Voleu continuar?",
+    "disabledExplanation": "Aquest atribut no es pot seleccionar perquè no està assignat al participant ni és assignable a un rol.",
+    "updateSuccessMessage": "Atributs del rol canviats correctament",
+    "updateErrorMessage": "No s'han pogut desar els canvis. Si us plau, torneu-ho a intentar més tard.",
+    "filters": {
+      "name": "Nom",
+      "code": "Codi",
+      "updateTimestamp": "Seleccionar rang de dates",
+      "updateTimestampFrom": "Data d'inici",
+      "updateTimestampTo": "Data de fi",
+      "placeholder": {
+        "name": "Escriviu un nom",
+        "code": "Escriviu un codi"
+      },
+      "search": "Aplicar",
+      "reset": "Restablir"
+    },
+    "identityAttributesInfoPage": {
+      "title": "Llista d'atributs",
+      "name": "Nom",
+      "code": "Codi",
+      "assignableToRoles": "Assignable a rols",
+      "updateTimestamp": "Data de darrera sincronització"
+    }
+  },
+  "filters": {
+    "title": "Filtre",
+    "titlePlural": "Filtres",
+    "selectColumn": "Seleccionar columna",
+    "statusPlaceholder": "Seleccionar valor",
+    "statusEmpty": "---",
+    "emailPlaceholder": "correu electrònic",
+    "reset": "Restablir",
+    "apply": "Aplicar",
+    "name": "Nom",
+    "description": "Descripció",
+    "code": "Codi",
+    "organization": "Nom del participant",
+    "participantType": "Tipus de participant",
+    "email": "Correu electrònic",
+    "onboardingDate": "Data d'incorporació",
+    "updateTimestamp": "Data de darrera actualització",
+    "firstName": "Nom",
+    "lastName": "Cognom",
+    "username": "Usuari",
+    "selectedCriteria": "Criteris seleccionats",
+    "clearAll": "Netejar tot"
+  },
+  "identityAttributesInfoPage": {
+    "title": "Llista d'atributs",
+    "name": "Nom",
+    "code": "Codi",
+    "assignableToRoles": "Assignable a rols",
+    "updateTimestamp": "Data de darrera sincronització",
+    "empty": "Sense dades",
+    "sync": {
+      "button": "Sincronitzar atributs d'identitat",
+      "success": "Còpia local d'atributs sincronitzada correctament.",
+      "error": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar més tard."
+    },
+    "filters": {
+      "name": "Nom",
+      "code": "Codi",
+      "description": "Descripció",
+      "updateTimestamp": "Seleccionar rang de dates",
+      "updateTimestampFrom": "Data d'inici",
+      "updateTimestampTo": "Data de fi",
+      "placeholder": {
+        "name": "Escriviu un nom",
+        "code": "Escriviu un codi",
+        "description": "Escriviu una descripció"
+      },
+      "search": "Aplicar",
+      "reset": "Restablir"
+    }
+  },
+  "deleteRole": {
+    "title": "Eliminar rol",
+    "content": "Esteu a punt d'eliminar el rol següent: <br> {{roleName}}. <br><br> Aquesta acció és irreversible, voleu continuar?",
+    "deleteButton": "Eliminar",
+    "saveSuccess": "Rol eliminat correctament.",
+    "saveError": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar."
+  },
+  "newEditRole": {
+    "title": "Crear nou rol",
+    "titleEdit": "Editar rol",
+    "name": "Nom",
+    "code": "Codi",
+    "enabled": "Habilitat",
+    "description": "Descripció",
+    "placeholder": {
+      "name": "Escriviu un nom",
+      "code": "Escriviu un codi",
+      "description": "Escriviu una descripció"
+    },
+    "cancel": "Cancel·lar",
+    "save": "Desar",
+    "update": "Actualitzar",
+    "newRole": {
+      "saveSuccess": "El rol s'ha creat correctament.",
+      "saveError": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar."
+    },
+    "editRole": {
+      "editSuccess": "El rol s'ha modificat correctament.",
+      "editError": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar."
+    },
+    "identityAttributesInfoPage": {
+      "title": "Llista d'atributs",
+      "name": "Nom",
+      "code": "Codi",
+      "assignableToRoles": "Assignable a rols",
+      "updateTimestamp": "Data de darrera sincronització",
+      "empty": "Sense dades",
+      "filters": {
+        "name": "Nom",
+        "code": "Codi",
+        "description": "Descripció",
+        "updateTimestamp": "Seleccionar rang de dates",
+        "updateTimestampFrom": "Data d'inici",
+        "updateTimestampTo": "Data de fi",
+        "placeholder": {
+          "name": "Escriviu un nom",
+          "code": "Escriviu un codi",
+          "description": "Escriviu una descripció"
+        },
+        "search": "Aplicar",
+        "reset": "Restablir"
+      }
+    },
+    "filters": {
+      "name": "Nom",
+      "code": "Codi",
+      "updateTimestamp": "Seleccionar rang de dates",
+      "updateTimestampFrom": "Data d'inici",
+      "updateTimestampTo": "Data de fi",
+      "placeholder": {
+        "name": "Escriviu un nom",
+        "code": "Escriviu un codi"
+      },
+      "search": "Aplicar",
+      "reset": "Restablir"
+    }
+  },
+  "roleRequests": {
+    "title": "Rols i sol·licituds",
+    "welcomeMessage": "Actualment no hi ha rols ni sol·licituds de rols disponibles per a aquest perfil. <br><br> Per sol·licitar un rol, feu clic al botó de baix i completeu la informació requerida. <br> La vostra sol·licitud serà avaluada per un operador i processada en conseqüència. <br> Si la sol·licitud és aprovada, se us assignarà automàticament el rol sol·licitat.",
+    "createRequest": "Crear sol·licitud",
+    "roleRequestModalTitle": "Nova sol·licitud de rol",
+    "roleRequestModalAcceptLabel": "Enviar sol·licitud",
+    "label": "Rols a sol·licitar",
+    "saveSuccess": "Sol·licitud de rol enviada correctament.",
+    "errorSave": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar.",
+    "deleteSuccess": "Sol·licitud de rol eliminada correctament.",
+    "errorDelete": "Alguna cosa ha anat malament. Si us plau, torneu-ho a intentar.",
+    "deleteRoleRequest": "Eliminar sol·licitud de rol",
+    "assignedRole": "Rols assignats actualment",
+    "noAssignedRole": "No hi ha rols assignats.",
+    "empty": "Sense dades",
+    "roleRequestsTitle": "Sol·licituds de rols",
+    "id": "ID",
+    "status": "Estat",
+    "creationDate": "Data de creació",
+    "lastUpdateDate": "Data de darrera actualització",
+    "alreadyRequested": "Ja s'ha enviat una sol·licitud de rol per a aquest rol.",
+    "close": "Tancar",
+    "roleRequestModalDetailTitle": "Detall de sol·licitud de rol",
+    "actions": "Accions",
+    "viewDetail": "Mostrar detall",
+    "noRolesAvailable": "No hi ha nous rols als quals pugueu aplicar.",
+    "deleteRoleRequestModalAcceptLabel": "Cancel·lar",
+    "deleteRoleRequestModalTitle": "Cancel·lar sol·licitud de rol",
+    "deleteMessage": "Aquesta acció és irreversible, voleu continuar?",
+    "deleteRoleRequestModalCancelLabel": "Mantenir",
+    "filters": {
+      "status": "Estat",
+      "placeholder": {
+        "status": "Seleccionar estat"
+      },
+      "open": "Oberta",
+      "approved": "Aprovada",
+      "rejected": "Rebutjada",
+      "cancelled": "Cancel·lada",
+      "apply": "Aplicar",
+      "reset": "Restablir"
+    },
+    "detail": {
+      "id": "ID",
+      "creationDate": "Data de creació",
+      "lastUpdateDate": "Data de darrera actualització",
+      "status": "Estat",
+      "rolesRequested": "Rols sol·licitats",
+      "rolesAssigned": "Rols assignats",
+      "reviewedBy": "Revisat per"
+    },
+    "statusValues": {
+      "OPEN": "Oberta",
+      "APPROVED": "Aprovada",
+      "REJECTED": "Rebutjada",
+      "CANCELED": "Cancel·lada"
+    }
+  },
+  "roleRequestsManagement": {
+    "title": "Sol·licituds de rols",
+    "filters": {
+      "OPEN": "Oberta",
+      "CANCELED": "Cancel·lada",
+      "APPROVED": "Aprovada",
+      "REJECTED": "Rebutjada",
+      "from": "Des de",
+      "to": "Fins a",
+      "placeholder": {
+        "createdBy": "Escriviu un correu electrònic",
+        "status": "Tots"
+      },
+      "reset": "Restablir",
+      "search": "Cercar",
+      "title": "Filtres",
+      "createdBy": "Creat per",
+      "status": "Estat",
+      "creationDate": "Data de creació"
+    },
+    "table": {
+      "id": "ID",
+      "createdBy": "Creat per",
+      "status": "Estat",
+      "creationTimestamp": "Data de creació",
+      "lastUpdateTimestamp": "Data de darrera actualització",
+      "actions": "Accions",
+      "empty": "Sense dades",
+      "detail": "Mostrar detall de la sol·licitud de rol",
+      "review": "Revisar sol·licitud de rol"
+    },
+    "detail": {
+      "title": "Detalls de la sol·licitud de rol",
+      "close": "Tancar",
+      "review": "Anar a la revisió",
+      "id": "ID",
+      "createdBy": "Creat per",
+      "creationTimestamp": "Data de creació",
+      "lastUpdateTimestamp": "Data de darrera actualització",
+      "status": "Estat",
+      "rolesRequested": "Rols sol·licitats",
+      "rolesAssigned": "Rols assignats",
+      "rolesAlreadyAssigned": "Rols ja assignats",
+      "reviewedBy": "Revisat per"
+    },
+    "review": {
+      "title": "Revisió de la sol·licitud de rol",
+      "rolesToAssign": "Seleccionar rols a assignar*",
+      "approve": "Aprovar",
+      "reject": "Rebutjar",
+      "back": "Tornar",
+      "successMessage": "Sol·licitud de rol revisada correctament."
+    }
+  },
+  "dateRange": {
+    "start": "Inici",
+    "end": "Fi"
+  },
+  "languageSelector": {
+    "headings": {
+      "euOfficial": "Idiomes oficials de la UE",
+      "nonEuOfficial": "Idiomes no oficials a la UE"
+    },
+    "languageLabels": {
+      "en": "Anglès",
+      "es": "Castellà",
+      "ca": "Català",
+      "va": "Valencià",
+      "gl": "Gallec",
+      "eu": "Basc"
+    }
+  },
+  "privateArea": "Àrea Privada",
+  "eui.CANCEL": "Cancel·lar",
+  "eui.OK": "Acceptar",
+  "eui.euitable.ITEMS-PER-PAGE": "Mostra",
+  "eui.euitable.SHOWING-RANGE": "{{range}}",
+  "eui.euitable.RANGE-LABEL": "de",
+  "eui.languageSelector.modalTitle": "Seleccionar llengua"
+}

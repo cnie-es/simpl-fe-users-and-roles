@@ -1,0 +1,136 @@
+<ng-container *transloco="let t; prefix: 'newUser'">
+  <eui-page>
+    <eui-page-header [label]="t('title')"></eui-page-header>
+    <eui-page-content>
+      <div class="row eui-u-flex eui-u-flex-justify-content-center">
+        <div class="col-12 col-md-10">
+          @if(loading){
+            <div class="eui-u-width-100 eui-u-flex row eui-u-flex-align-items-center eui-u-flex-justify-content-center py-2">
+              <eui-progress-bar [isIndeterminate]="true"></eui-progress-bar>
+            </div>
+          } @else {
+            <form [formGroup]="userForm" id="userForm" (ngSubmit)="onSubmit()" class="eui-u-flex eui-u-flex-column eui-u-flex-gap-s">
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="email">{{ t('email') }}</label>
+                <input data-testid="user_form_input_email" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="email" formControlName="email" required
+                  placeholder="{{t('emailPlaceholder')}}" />
+                  @if (userForm.get('email')?.invalid && (userForm.get('email')?.dirty ||
+                  userForm.get('email')?.touched)) {
+                    <eui-feedback-message euiDanger>{{ t('emailValidation') }}</eui-feedback-message>
+                  }
+              </div>
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="firstName">{{ t('firstName') }}</label>
+                <input data-testid="user_form_input_firstname" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="firstName" formControlName="firstName" required
+                  placeholder="{{t('firstNamePlaceholder')}}" />
+                  @if (userForm.get('firstName')?.invalid && (userForm.get('firstName')?.dirty ||
+                  userForm.get('firstName')?.touched)) {
+                    <eui-feedback-message euiDanger>{{ t('required') }}</eui-feedback-message>
+                  }
+              </div>
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="lastName">{{ t('lastName') }}</label>
+                <input data-testid="user_form_input_lastname" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="lastName" formControlName="lastName" required
+                  placeholder="{{t('lastNamePlaceholder')}}" />
+                  @if (userForm.get('lastName')?.invalid && (userForm.get('lastName')?.dirty ||
+                  userForm.get('lastName')?.touched)) {
+                    <eui-feedback-message euiDanger>{{ t('required') }}</eui-feedback-message>
+                  }
+              </div>
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="username">{{ t('username') }}</label>
+                <input data-testid="user_form_input_username" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="username" formControlName="username" required
+                  placeholder="{{t('usernamePlaceholder')}}" />
+                  @if (userForm.get('username')?.invalid && (userForm.get('username')?.dirty ||
+                  userForm.get('username')?.touched)) {
+                    <eui-feedback-message euiDanger>{{ t('required') }}</eui-feedback-message>
+                  }
+              </div>
+
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="password">{{ t('password') }}</label>
+                <div euiInputGroupAddOn>
+                  <input data-testid="users_form_input_password" euiInputText id="password" formControlName="password" required [type]="passwordVisible ? 'text' : 'password'"
+                    placeholder="{{t('passwordPlaceholder')}}" />
+                    <button data-testid="user_form_button_showpassword" euiButton euiSecondary [euiOutline]="true" euiIconButton (click)="passwordVisible = !passwordVisible" aria-label="Show/Hide">
+                      <eui-icon-svg set="sharp" [icon]="passwordVisible ? 'eye-off' : 'eye'" size="s"></eui-icon-svg>
+                    </button>
+                </div>
+                @if (userForm.get('password')?.invalid && (userForm.get('password')?.dirty ||
+                  userForm.get('password')?.touched)) {
+                    <eui-feedback-message euiDanger>{{ t('required') }}</eui-feedback-message>
+                  }
+                  <eui-feedback-message>
+                    @let passwordMinLengthError = userForm.hasError('passwordMinLength');
+                    @let passwordMaxLengthError = userForm.hasError('passwordMaxLength');
+                    @let passwordUppercaseError = userForm.hasError('passwordUppercase');
+                    @let passwordLowercaseError = userForm.hasError('passwordLowercase');
+                    @let passwordNumericError = userForm.hasError('passwordNumeric');
+                    @let passwordSpecialCharError = userForm.hasError('passwordSpecialChar');
+                    @let passwordForbiddenError = userForm.hasError('passwordForbidden');
+                    <span class="eui-u-c-black">{{'newUser.passwordRules.mustBeBetween' | translate }}</span>
+                    <span
+                      [class.eui-u-c-success]="!passwordMinLengthError && !passwordMaxLengthError"
+                      [class.eui-u-c-danger]="passwordMinLengthError || passwordMaxLengthError">
+                      {{'newUser.passwordRules.passwordLength' | translate :{start: passwordValidationConfig.minLength.toString(), end: passwordValidationConfig.maxLength.toString()} }}
+                    </span>,
+                    <span class="eui-u-c-black">{{'newUser.passwordRules.containsAtLeast' | translate }}</span>
+                    <span [class.eui-u-c-success]="!passwordUppercaseError"
+                      [class.eui-u-c-danger]="passwordUppercaseError">
+                      {{'newUser.passwordRules.uppercaseLetters' | translate :{num:'1'} }}
+                    </span>,
+                    <span [class.eui-u-c-success]="!passwordLowercaseError"
+                      [class.eui-u-c-danger]="passwordLowercaseError">
+                      {{'newUser.passwordRules.lowercaseLetters' | translate :{num:'1'} }}
+                    </span>,
+                    <span [class.eui-u-c-success]="!passwordNumericError"
+                      [class.eui-u-c-danger]="passwordNumericError">
+                      {{'newUser.passwordRules.numbers' | translate :{num:'1'} }}
+                    </span>,
+                    <span [class.eui-u-c-success]="!passwordSpecialCharError"
+                      [class.eui-u-c-danger]="passwordSpecialCharError">
+                      {{'newUser.passwordRules.specialChars' | translate :{num:'1', specialCharsSample: specialCharsSample} }}
+                    </span>
+                    <span [class.eui-u-c-success]="!passwordForbiddenError"
+                      [class.eui-u-c-danger]="passwordForbiddenError">
+                      {{'newUser.passwordRules.forbidden' | translate :{num:'4'} }}
+                    </span>
+                  </eui-feedback-message>
+              </div>
+
+              <div euiInputGroup>
+                <label euiLabel euiRequired="" for="confirmPassword">{{ t('confirmPassword') }}</label>
+                <div euiInputGroupAddOn>
+                  <input data-testid="user_form_input_confirmpassword" euiInputText id="confirmPassword" formControlName="confirmPassword" required [type]="passwordConfirmVisible ? 'text' : 'password'"
+                    placeholder="{{t('confirmPasswordPlaceholder')}}" />
+                    <button data-testid="user_form_button_showconfirmpassword" euiButton euiSecondary [euiOutline]="true" euiIconButton (click)="passwordConfirmVisible = !passwordConfirmVisible" aria-label="Show/Hide">
+                      <eui-icon-svg set="sharp" [icon]="passwordConfirmVisible ? 'eye-off' : 'eye'" size="s"></eui-icon-svg>
+                    </button>
+                </div>
+                @if (userForm.get('confirmPassword')!.hasError('noMatch')) {
+                  <eui-feedback-message euiDanger>{{ t('noMatch') }}</eui-feedback-message>
+                }
+              </div>
+
+              <div euiInputGroup>
+                <label euiLabel for="roles">{{ t('rolesPlaceholder') }}</label>
+                <eui-autocomplete id="roles" formControlName="roles" [autocompleteData]="selectableRoles"
+                    [hasChips]="true">
+                </eui-autocomplete>
+              </div>
+
+              <div>
+                <button data-testid="user_form_button_submit" euiButton id="submitButton" [disabled]="loading || !userForm.valid" type="submit" class="eui-u-mr-s eui-u-mb-s" euiPrimary>
+                  @if(loading){
+                    <eui-icon-svg isLoading></eui-icon-svg>
+                  }
+                  <span euiLabel class="eui-u-ml-s">{{ t('button') }}</span>
+                </button>
+              </div>
+            </form>
+          }
+        </div>
+      </div>
+    </eui-page-content>
+  </eui-page>
+</ng-container>

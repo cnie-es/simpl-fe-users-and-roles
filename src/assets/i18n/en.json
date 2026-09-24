@@ -1,0 +1,475 @@
+{
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "signout": "Sign out",
+    "actionCompleted": "Action Completed",
+    "actionFailed": "Action Failed",
+    "failureMessage": "There was an error while processing the request. Please try again later."
+  },
+  "userInformationPage": {
+    "title": "Users list",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "Username",
+    "status": "Status",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "updateTimestamp": "Last update date",
+    "info": "Actions",
+    "cancel": "Close",
+    "userRoles": "Roles list",
+    "newUser": "Create new user",
+    "noRoles": "No role for the selected user.",
+    "empty": "No Data",
+    "editUser": "Edit user",
+    "viewDetail": "View user details",
+    "deleteUser": "Delete user",
+    "filters": {
+      "email": "Email",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "placeholder": {
+        "email": "Type an email",
+        "firstName": "Type a first name",
+        "lastName": "Type a last name",
+        "username": "Type a username"
+      },
+      "search": "Apply",
+      "reset": "Reset"
+    }
+  },
+  "editUser": {
+    "title": "Edit User",
+    "form": {
+      "email": "Email",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "roles": "Roles",
+      "status": "Status",
+      "enabled": "Enabled",
+      "disabled": "Disabled"
+    },
+    "cancelButton": "Cancel",
+    "saveButton": "Save changes",
+    "saveSuccess": "User successfully updated",
+    "emailValidation": "Must be a valid email",
+    "required": "Field is required and cannot be empty"
+  },
+  "deleteUser": {
+    "title": "Delete User",
+    "content": "You are about to delete the following user: {{username}}. <br> This action is irreversible, do you wish to proceed?",
+    "saveSuccess": "User deleted successfully.",
+    "saveError": "An error occurred while deleting the user. Please try again."
+  },
+  "newUser": {
+    "title": "New User",
+    "email": "Email address",
+    "emailPlaceholder": "Email",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Last Name",
+    "username": "Username",
+    "usernamePlaceholder": "Username",
+    "password": "Password",
+    "passwordPlaceholder": "Password",
+    "confirmPassword": "Password confirmation",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "roles": "Roles",
+    "rolesPlaceholder": "Roles",
+    "rolesEmpty": "There are no roles available",
+    "button": "Create new user",
+    "saveSuccess": "New user successfully created",
+    "emailValidation": "Must be a valid email",
+    "required": "Field is required and cannot be empty",
+    "noMatch": "Passwords do not match",
+    "passwordRules": {
+      "mustBeBetween": "The password must be between",
+      "passwordLength": "{{start}} and {{end}} characters long",
+      "containsAtLeast": "and contain at least",
+      "uppercaseLetters": "{{num}} uppercase letter (A-Z)",
+      "lowercaseLetters": "{{num}} lowercase letter (a-z)",
+      "numbers": "{{num}} number (0-9)",
+      "specialChars": "{{num}} special character ({{specialCharsSample}} etc).",
+      "forbidden": "The password must not contain portions of Email, Organisation name, Name, Surname, or Username greater than {{num}} characters."
+    }
+  },
+  "landing-pages": {
+    "unauthorized": {
+      "title": "Role Restricted Access",
+      "message": "Access denied. Your role does not grant permission to view this content."
+    },
+    "error-page": {
+      "title": "Error",
+      "message": {
+        "400": "Your request could not be understood by the server due to invalid syntax or parameters.",
+        "401": "You are not authorized to access this resource. Please ensure you are logged in with the correct credentials.",
+        "403": "Access denied. Your role does not grant permission to view this content.",
+        "404": "The resource you are looking for could not be found on the server.",
+        "500": "The server encountered an internal error and was unable to complete your request. Please try again later.",
+        "501": "The server does not support the functionality required to fulfill the request.",
+        "502": "The server, acting as a gateway, received an invalid response from the upstream server.",
+        "503": "The server is currently unavailable due to overload or maintenance. Please try again later.",
+        "504": "The server, acting as a gateway, did not receive a timely response from the upstream server.",
+        "505": "The server does not support the HTTP protocol version used in the request.",
+        "508": "The server detected a loop while processing the request.",
+        "511": "The client must authenticate to gain network access."
+      }
+    }
+  },
+  "rolesInfoPage": {
+    "empty": "No Data",
+    "title": "Roles list",
+    "name": "Name",
+    "description": "Description",
+    "code": "Code",
+    "enabled": "Enabled",
+    "builtIn": "Built-in",
+    "detail": "Action",
+    "showDetail": "Show detail",
+    "editRole": "Edit role",
+    "deleteRole" : "Delete role",
+    "newRole": "Create new role",
+    "cancel": "Cancel",
+    "save": "Save",
+    "update": "Update",
+    "filters": {
+      "name": "Name",
+      "description": "Description",
+      "code": "Code",
+      "placeholder": {
+        "name": "Type a name",
+        "description": "Type a description",
+        "code": "Type a code"
+      },
+      "search": "Apply",
+      "reset": "Reset"
+    }
+  },
+  "roleDescriptions": {
+    "T2IAA_M": "User in charge of defining and changing the onboarding procedure itself, such as setting up the mandatory documents and the rules followed by the onboarding process.",
+    "NOTARY": "Tier 2 authorisation operator, in charge of handling onboarding requests and following up on them. Can request further documents, comment on the requests and approve or reject them.",
+    "ONBOARDER_M": "Tier 2 setup administrator, in charge of finalising the Tier 2 setup of an agent installation.",
+    "IATTR_M": "Role present only in the Dataspace Governance Authority. It covers the whole lifecycle of identity attributes, from creation and management to assignment to participants.",
+    "T1UAR_M": "Tier 1 user and roles manager. Manages local roles and dataspace identity attributes: defines them and assigns them to participant types, determining their assignability.",
+    "APPLICANT": "End user who manages onboarding requests for dataspace participants signing up through the public dataspace onboarding site. Creates onboarding requests and responds to Tier 2 (NOTARY) authorisation interactions until approval.",
+    "Ro-MU-CA": "Role defined in the XFSC Federated Catalogue: Catalogue Administrator.",
+    "Ro-MU-A": "Role defined in the XFSC Federated Catalogue: Participant Administrator.",
+    "Ro-SD-A": "Role defined in the XFSC Federated Catalogue: Self-Description Administrator.",
+    "Ro-Pa-A": "Role defined in the XFSC Federated Catalogue: Participant User Administrator.",
+    "SD_PUBLISHER": "Role for the user responsible for creating and publishing the self-description on the catalogue.",
+    "SD_CONSUMER": "Tier 1 role for the data consumer.",
+    "GA_SCHEMA_ADMIN": "Schema Manager administrator. Tier 1 role for schema administration.",
+    "GA_SCHEMA_VIEWER": "Schema Manager viewer. Tier 1 role for schema consultation.",
+    "KIBANA_BUSINESS_USER": "Kibana business user. Grants access to Kibana as a business user (bound to a local Kibana user).",
+    "KIBANA_ADMIN": "Kibana administrator. Grants access to Kibana as an administrator (bound to a local Kibana user).",
+    "ORCH_DEVELOPER": "Data orchestration developer. Allows developing workflows and services for data orchestration.",
+    "ORCH_ADMIN": "Data orchestration administrator. Administers and manages the orchestration: scheduling, workflow retries and monitoring.",
+    "INFRA_ADMIN": "Infrastructure provider administrator. Manages all the infrastructure provider's cloud resources.",
+    "INFRA_DEPLOYER": "Infrastructure provider deployer. Activates and deactivates the infrastructure provider's cloud resources.",
+    "G-Administrator": "Governance Authority administrator. Manages and administers the whole dataspace.",
+    "G-Content Editor": "Governance Authority content editor. Manages the content of the public portal.",
+    "G-Operator": "Governance Authority operator. Responsible for the day-to-day operational management of the dataspace.",
+    "G-Portal Manager": "Governance Authority portal manager. Manages the public portal, both its structure and its content.",
+    "G-Tech Operator": "Governance Authority technical operator. Responsible for operating and maintaining the technical infrastructure of the dataspace.",
+    "P-Connector Administrator": "Participant connector administrator. Installs and manages the participant's EDNEL connectors, and appoints the participant's user administrator.",
+    "P-Data Consumer": "Participant data consumer. Can browse and search the asset catalogue and consume free data while complying with the applicable policies.",
+    "P-Data Offer Manager": "Participant data offer manager. Defines the policies and the pricing of the participant's assets and creates the offers.",
+    "P-Data Provider": "Participant data provider. Creates, edits and deletes the metadata of the participant's assets.",
+    "P-Financial Administrator": "Participant financial administrator. Handles the financial operations: invoicing and payment management.",
+    "P-Legal Representative": "Person appointed by the participating entity to request participation in EDNEL and to act as its legal representative, for instance as the point of contact with the Governance Authority.",
+    "P-User Administrator": "Participant user administrator. Manages the participant's users: creates, edits and deactivates them and assigns them roles, except for the P-Legal Representative and P-Connector Administrator roles."
+  },
+  "roleDetail": {
+    "title": "Role Detail",
+    "roleName": "Role Name",
+    "roleDescription": "Role Description",
+    "empty": "No Data",
+    "resetAttributes": "Reset",
+    "saveAttributes": "Save",
+    "saveChanges": "Save changes",
+    "messageChanges": "This will change the attributes of this role, potentially affecting many users. Do you wish to proceed?",
+    "disabledExplanation": "This attribute can't be selected because it's not assigned to the participant or assignable to a role.",
+    "updateSuccessMessage": "Role attributes successfully changed",
+    "updateErrorMessage": "Changes could not be saved. PLease try again later.",
+    "filters": {
+      "name": "Name",
+      "code": "Code",
+      "updateTimestamp": "Select date range",
+      "updateTimestampFrom": "Start Date",
+      "updateTimestampTo": "End Date",
+      "placeholder": {
+        "name": "Type a name",
+        "code": "Type a code"
+      },
+      "search": "Apply",
+      "reset": "Reset"
+    },
+    "identityAttributesInfoPage": {
+      "title": "Attributes list",
+      "name": "Name",
+      "code": "Code",
+      "assignableToRoles": "Assignable to roles",
+      "updateTimestamp": "Last Synchronization Date"
+    }
+  },
+  "filters": {
+    "title": "Filter",
+    "titlePlural": "Filters",
+    "selectColumn": "Select column",
+    "statusPlaceholder": "Select value",
+    "statusEmpty": "---",
+    "emailPlaceholder": "email",
+    "reset": "Reset",
+    "apply": "Apply",
+    "name": "Name",
+    "description": "Description",
+    "code": "Code",
+    "organization": "Participant Name",
+    "participantType": "Participant Type",
+    "email": "Email",
+    "onboardingDate": "Onboarding Date",
+    "updateTimestamp": "Last Update Date",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "username": "Username",
+    "selectedCriteria": "Selected criteria",
+    "clearAll": "Clear All"
+  },
+  "identityAttributesInfoPage": {
+    "title": "Attributes list",
+    "name": "Name",
+    "code": "Code",
+    "assignableToRoles": "Assignable to roles",
+    "updateTimestamp": "Last Synchronization Date",
+    "empty": "No Data",
+    "sync": {
+      "button": "Synchronise Identity Attributes",
+      "success": "Local copy of attributes successfully synchronised.",
+      "error": "Something went wrong. Please try again later."
+    },
+    "filters": {
+      "name": "Name",
+      "code": "Code",
+      "description": "Description",
+      "updateTimestamp": "Select date range",
+      "updateTimestampFrom": "Start Date",
+      "updateTimestampTo": "End Date",
+      "placeholder": {
+        "name": "Type a name",
+        "code": "Type a code",
+        "description": "Type a description"
+      },
+      "search": "Apply",
+      "reset": "Reset"
+    }
+  },
+  "deleteRole": {
+    "title": "Delete role",
+    "content": "You are about to delete the following role: <br> {{roleName}}. <br><br> This action is irreversible, Do you wish to proceed?",
+    "deleteButton": "Delete",
+    "saveSuccess": "Role successfully deleted.",
+    "saveError": "Something went wrong. Please try again."
+  },
+  "newEditRole": {
+    "title": "Create new role",
+    "titleEdit": "Edit role",
+    "name": "Name",
+    "code": "Code",
+    "enabled": "Enabled",
+    "description": "Description",
+    "placeholder": {
+      "name": "Type a name",
+      "code": "Type a code",
+      "description": "Type a description"
+    },
+    "cancel": "Cancel",
+    "save": "Save",
+    "update": "Update",
+    "newRole": {
+      "saveSuccess": "Role was successfully created.",
+      "saveError": "Something went wrong. Please try again."
+    },
+    "editRole": {
+      "editSuccess": "Role was successfully modified.",
+      "editError": "Something went wrong. Please try again."
+    },
+    "identityAttributesInfoPage": {
+      "title": "Attributes list",
+      "name": "Name",
+      "code": "Code",
+      "assignableToRoles": "Assignable to roles",
+      "updateTimestamp": "Last Synchronization Date",
+      "empty": "No Data",
+      "filters": {
+        "name": "Name",
+        "code": "Code",
+        "description": "Description",
+        "updateTimestamp": "Select date range",
+        "updateTimestampFrom": "Start Date",
+        "updateTimestampTo": "End Date",
+        "placeholder": {
+          "name": "Type a name",
+          "code": "Type a code",
+          "description": "Type a description"
+        },
+        "search": "Apply",
+        "reset": "Reset"
+      }
+    },
+    "filters": {
+      "name": "Name",
+      "code": "Code",
+      "updateTimestamp": "Select date range",
+      "updateTimestampFrom": "Start Date",
+      "updateTimestampTo": "End Date",
+      "placeholder": {
+        "name": "Type a name",
+        "code": "Type a code"
+      },
+      "search": "Apply",
+      "reset": "Reset"
+    }
+  },
+  "roleRequests": {
+    "title": "Roles and requests",
+    "welcomeMessage": "There are no roles nor role requests currently available for this profile. <br><br> To request a role click the button below and fill in the required info. <br> Your request will be evaluated by an operator and processed accordingly. <br> If the request is approved, you will be automatically granted the role you requested.",
+    "createRequest": "Create request",
+    "roleRequestModalTitle": "New role request",
+    "roleRequestModalAcceptLabel": "Submit request",
+    "label": "Roles to request",
+    "saveSuccess": "Role request successfully submitted.",
+    "errorSave": "Something went wrong. Please try again.",
+    "deleteSuccess": "Role request successfully deleted.",
+    "errorDelete": "Something went wrong. Please try again.",
+    "deleteRoleRequest": "Delete role request",
+    "assignedRole": "Currenly assigned roles",
+    "noAssignedRole": "No roles assigned.",
+    "empty": "No Data",
+    "roleRequestsTitle": "Role requests",
+    "id": "ID",
+    "status": "Status",
+    "creationDate": "Creation date",
+    "lastUpdateDate": "Last update date",
+    "alreadyRequested": "Role request already submitted for this role.",
+    "close": "Close",
+    "roleRequestModalDetailTitle": "Role request detail",
+    "actions": "Actions",
+    "viewDetail": "Show detail",
+    "noRolesAvailable": "There are no new roles you can apply for.",
+    "deleteRoleRequestModalAcceptLabel": "Cancel",
+    "deleteRoleRequestModalTitle": "Cancel role request",
+    "deleteMessage": "This action is irreversible, do you wish to proceed?",
+    "deleteRoleRequestModalCancelLabel": "Keep",
+    "filters": {
+      "status": "Status",
+      "placeholder": {
+        "status": "Select status"
+      },
+      "open": "Open",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "cancelled": "Canceled",
+      "apply": "Apply",
+      "reset": "Reset"
+    },
+    "detail": {
+      "id": "ID",
+      "creationDate": "Creation date",
+      "lastUpdateDate": "Last update date",
+      "status": "Status",
+      "rolesRequested": "Roles requested",
+      "rolesAssigned": "Roles assigned",
+      "reviewedBy": "Reviewed by"
+    },
+    "statusValues": {
+      "OPEN": "Open",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected",
+      "CANCELED": "Canceled"
+    }
+  },
+  "roleRequestsManagement": {
+    "title": "Role requests",
+    "filters": {
+      "OPEN": "Open",
+      "CANCELED": "Canceled",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected",
+      "from": "From",
+      "to": "To",
+      "placeholder": {
+        "createdBy": "Type an email",
+        "status": "All"
+      },
+      "reset": "Reset",
+      "search": "Search",
+      "title": "Filters",
+      "createdBy": "Created by",
+      "status": "Status",
+      "creationDate": "Creation date"
+    },
+    "table": {
+      "id": "ID",
+      "createdBy": "Created by",
+      "status": "Status",
+      "creationTimestamp": "Creation Date",
+      "lastUpdateTimestamp": "Last Updated Date",
+      "actions": "Actions",
+      "empty": "No Data",
+      "detail": "Show Role request detail",
+      "review": "Review Role request"
+    },
+    "detail": {
+      "title": "Role request details",
+      "close": "Close",
+      "review": "Go to review",
+      "id": "ID",
+      "createdBy": "Created by",
+      "creationTimestamp": "Creation date",
+      "lastUpdateTimestamp": "Last update date",
+      "status": "Status",
+      "rolesRequested": "Roles requested",
+      "rolesAssigned": "Roles assigned",
+      "rolesAlreadyAssigned": "Roles already assigned",
+      "reviewedBy": "Reviewed by"
+    },
+    "review": {
+      "title": "Role request review",
+      "rolesToAssign": "Select roles to assign*",
+      "approve": "Approve",
+      "reject": "Reject",
+      "back": "Back",
+      "successMessage": "Role request successfully reviewed."
+    }
+  },
+  "dateRange": {
+    "start": "Start",
+    "end": "End"
+  },
+  "languageSelector": {
+    "headings":{
+      "euOfficial": "EU official languages",
+      "nonEuOfficial": "Non-official EU languages"
+    },
+    "languageLabels": {
+      "en": "English",
+      "es": "Spanish",
+      "ca": "Catalan",
+      "va": "Valencian",
+      "gl": "Galician",
+      "eu": "Basque"
+    }
+  },
+  "privateArea": "Private Area",
+  "eui.CANCEL": "Cancel",
+  "eui.OK": "OK",
+  "eui.euitable.ITEMS-PER-PAGE": "Show",
+  "eui.euitable.SHOWING-RANGE": "{{range}}",
+  "eui.euitable.RANGE-LABEL": "of",
+  "eui.languageSelector.modalTitle": "Select language"
+}

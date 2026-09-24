@@ -1,0 +1,9 @@
+.git
+.github
+.gitea
+.gitlab
+.tekton
+node_modules
+coverage
+allure-results
+*.log

@@ -1,0 +1,17 @@
+<ng-container *transloco="let t">
+  @if (data.roles.length && data.roles.length > 0) {
+  <div>
+    @for (role of data.roles; track $index) {
+    <div class="eui-u-flex eui-u-flex-column eui-u-flex-gap-xs mt-2">
+      <h5 class="euiLabel eui-u-f-l eui-u-mv-none">{{ role.name}}</h5>
+      <p class="text-secondary eui-u-mv-none">{{ role | roleDescription }}</p>
+      @if($index < data.roles.length - 1){
+        <hr>
+      }
+    </div>
+    }
+  </div>
+  } @else {
+    <p class="ui-u-mx-none">{{ t(data.noRoles) }}</p>
+  }
+</ng-container>

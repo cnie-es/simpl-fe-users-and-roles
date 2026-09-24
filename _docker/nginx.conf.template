@@ -1,0 +1,37 @@
+# set a writable location for the nginx PID file
+pid /tmp/nginx.pid;
+
+# the events block is required
+events{}
+
+http {
+    # include the default mime.types to map file extensions to MIME types
+    include /etc/nginx/mime.types;
+
+    types {
+      application/javascript mjs;
+    }
+
+    server {
+        # set the root directory for the server (we need to copy our
+        # application files here)
+        root /usr/share/nginx/html;
+        listen 3000;
+
+        # set the default index file for the server (Angular generates the
+        # index.html file for us and it will be in the above directory)
+        index index.html;
+
+        location = /info/version {
+            default_type application/json;
+            add_header Content-Type application/json;
+            try_files $uri =404;
+        }
+
+        location / {
+            rewrite ^${APP_BASE_PATH}[/]+(.*) /$1 break;
+            try_files $uri $uri/ /index.html;
+        }
+
+    }
+}

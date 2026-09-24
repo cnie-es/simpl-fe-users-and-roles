@@ -1,0 +1,179 @@
+<ng-container *transloco="let t; prefix: 'roleDetail'">
+  <eui-page>
+    <eui-page-header [label]="t('title')"></eui-page-header>
+    <eui-page-content>
+      <eui-page-columns>
+        <eui-page-column [isCollapsed]="true" [isCollapsible]="true" [label]="'filters.titlePlural' | translate" class="ednel-filters" euiSizeVariant="2xl">
+          <eui-page-column-body>
+            <form [formGroup]="filtersForm" class="eui-u-flex eui-u-flex-column eui-u-flex-gap-s" id="filtersForm"
+                  (ngSubmit)="getIdentityAttributeList()">
+              <div euiInputGroup>
+                <label euiLabel for="name">{{ t('filters.name') }}</label>
+                <input data-testid="role_filter_input_name" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="name" formControlName="name"
+                       placeholder="{{t('filters.placeholder.name')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="code">{{ t('filters.code') }}</label>
+                <input data-testid="role_filter_input_code" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="code" formControlName="code"
+                       placeholder="{{t('filters.placeholder.code')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="updateTimestampFilter">{{ t('filters.updateTimestamp') }}</label>
+                <eui-date-range-selector data-testid="role_filter_input_updatetimestamp" isResponsive="" id="updateTimestampFilter"
+                                         formControlName="updateTimestamp"
+                                        [firstInputPlaceholder]="'dateRange.start' | translate"
+                                        [secondInputPlaceholder]="'dateRange.end' | translate"></eui-date-range-selector>
+              </div>
+              <div class="ednel-button-group">
+                <button data-testid="role_filter_button_reset" euiButton id="reset-role-detail-button" [disabled]="loading()" type="button" class="eui-u-width-50"
+                        euiSecondary (click)="resetFilters()">
+                  {{ t('filters.reset') }}
+                </button>
+                <button data-testid="role_filter_button_submit" [euiDisabled]="filtersForm.invalid" euiButton id="submit-role-detail-button" [disabled]="loading()" type="submit" class="eui-u-width-50"
+                        euiPrimary>
+                  {{ t('filters.search') }}
+                </button>
+              </div>
+            </form>
+          </eui-page-column-body>
+        </eui-page-column>
+
+        <eui-page-column>
+          <eui-page-column-body>
+            @if(loading()){
+              <div class="eui-u-width-100 eui-u-flex row eui-u-flex-align-items-center eui-u-flex-justify-content-center eui-u-py-s">
+                <eui-progress-bar isIndeterminate=""></eui-progress-bar>
+              </div>
+            } @else {
+              @if(roleDetail){
+                <div class="row">
+                  <div class="col-12">
+                    <eui-card>
+                      <eui-card-header [isHeaderMultilines]="true">
+                        <eui-card-header-title>
+                          <div class="eui-u-f-l">{{ t('roleName') }}</div>
+                          <div>{{ roleDetail.name }}</div>
+                        </eui-card-header-title>
+                      </eui-card-header>
+                    </eui-card>
+                  </div>
+                  <div class="col-12 py-2 eui-u-mb-m">
+                    <eui-card>
+                      <eui-card-header [isHeaderMultilines]="true">
+                        <eui-card-header-title>
+                          <div class="eui-u-f-l">{{ t('roleDescription') }}</div>
+                          <div>{{ roleDetail | roleDescription }}</div>
+                        </eui-card-header-title>
+                      </eui-card-header>
+                    </eui-card>
+                  </div>
+                </div>
+              }
+              <div class="eui-u-display-flex eui-u-mb-m eui-u-flex-align-items-center">
+                @if(roleDetailChips.length){
+                  <div class="eui-u-mr-xs eui-u-p-2xs eui-u-flex-column eui-u-flex-gap-none">
+                  <span>
+                    {{ 'filters.selectedCriteria' | translate}}
+                  </span>
+                    <span class="eui-u-text-link" (click)="resetFilters()" onKeyPress>
+                    {{ 'filters.clearAll' | translate }}
+                  </span>
+                  </div>
+                  <eui-chip-list (chipRemove)="removeChip($event)">
+                    @for (chip of roleDetailChips; track $index) {
+                      <eui-chip [id]="chip.field" [data]="{id: chip.field}" isFilled isChipRemovable class="eui-u-mr-2xs eui-u-mb-2xs">
+                        <span euiLabel>{{ t('filters.' + chip.field) }}: {{ chip.value }}</span>
+                      </eui-chip>
+                    }
+                  </eui-chip-list>
+                }
+              </div>
+              <div class="eui-table-v2__scrollable-wrapper eui-u-mb-m">
+                <table euiTableV2 isTableResponsive [data]="data" [preselectedRows]="preSelected"
+                       [isLoading]="tableLoading()" propId="code" (sortChange)="onSortChange($event)"
+                      >
+                  <ng-template euiTemplate="header">
+                    <tr>
+                      <th>-</th>
+                      <th isSortable sortOn="name" isMultiSortable>{{ t('identityAttributesInfoPage.name') }}</th>
+                      <th isSortable sortOn="code" isMultiSortable>{{ t('identityAttributesInfoPage.code') }}</th>
+                      <th isSortable sortOn="updateTimestamp" isMultiSortable>
+                        {{ t('identityAttributesInfoPage.updateTimestamp') }}</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template let-row euiTemplate="body">
+                    <tr>
+                      @if(row.assignableToRoles && row.assignedToParticipant) {
+                        <td class="eui-table__cell-select">
+                          <div class="eui-table__cell-select-checkbox-container">
+                            <input data-testid="role_table_input_checkedrow" euiInputCheckBox [checked]="getCheck(row)" (click)="toggleCheckedState($event, row)"/>
+                          </div>
+                        </td>
+                      } @else {
+                        <td class="eui-table__cell-select">
+                          <div class="eui-table__cell-select-checkbox-container">
+                            <div class="eui-u-display-inline-block" [euiTooltip]="'roleDetail.disabledExplanation' | translate" position="right">
+                              <input data-testid="role_table_input_uncheckedrow" aria-label="default checkbox unchecked" euiInputCheckBox checked="false" disabled />
+                            </div>
+                          </div>
+                        </td>
+                      }
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.code }}</td>
+                      <td>{{ row.updateTimestamp | date:'dd/MM/yyyy' }}</td>
+                    </tr>
+                  </ng-template>
+                  <ng-template let-row euiTemplate="noData">
+                    <tr>
+                      <td class="eui-u-text-center" colspan="5">
+                        {{ t('empty') }}
+                      </td>
+                    </tr>
+                  </ng-template>
+                  <ng-template euiTemplate="footer">
+                    <tr>
+                      <td class="eui-u-text-center" colspan="5">
+                        <eui-paginator #rolePaginator hasPageNumberNavigation [length]="totalElements"
+                                       [pageSizeOptions]="[5, 10, 25, 100]" [page]="pagination.page" [pageSize]="pagination.pageSize"
+                                       (pageChange)="onPageChange($event)" [hasPageNumberNavigation]="true">
+                        </eui-paginator>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </table>
+              </div>
+              <div class="ednel-button-group">
+                <button data-testid="role_table_button_resetattributes" euiButton id="resetAttributesButton" [disabled]="loading()" type="button" class="eui-u-mr-s eui-u-mb-s"
+                        euiSecondary (click)="onResetAttributes()">
+                  {{ t('resetAttributes') }}
+                </button>
+                <button data-testid="role_table_button_saveattributes" euiButton id="submitAttributes" [disabled]="loading()" type="button" class="eui-u-mr-s eui-u-mb-s"
+                        euiPrimary (click)="confirmDialog.openDialog()">
+                  {{ t('saveAttributes') }}
+                </button>
+              </div>
+            }
+          </eui-page-column-body>
+        </eui-page-column>
+      </eui-page-columns>
+
+      <eui-dialog #dialog [title]="t('saveChanges')" [dismissLabel]="t('resetAttributes')"
+                  [acceptLabel]="t('saveAttributes')" (accept)="confirmSave()">
+        {{ t('messageChanges') }}
+      </eui-dialog>
+
+      @if(saveStatus !== ''){
+        <div class="col-10">
+          <eui-alert euiSuccess [isCloseable]="true" [isVisible]="saveStatus === 'success'"
+                     (closeAlert)="saveStatus = ''">
+            {{ t('updateSuccessMessage') }}
+          </eui-alert>
+
+          <eui-alert euiDanger [isCloseable]="true" [isVisible]="saveStatus === 'error'" (closeAlert)="saveStatus = ''">
+            {{ t('updateErrorMessage') }}
+          </eui-alert>
+        </div>
+      }
+    </eui-page-content>
+  </eui-page>
+</ng-container>

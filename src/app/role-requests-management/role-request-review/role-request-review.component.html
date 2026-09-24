@@ -1,0 +1,33 @@
+<eui-page>
+  <eui-page-header [label]="'roleRequestsManagement.review.title' | translate">
+  </eui-page-header>
+  <eui-page-content>
+    @if (roleRequest()) {
+      <app-role-request-detail [data]="roleRequest()" [roleAlreadyAssigned]="roleAlreadyAssigned()"/>
+      <div euiInputGroup>
+        <label euiLabel for="roles">{{ 'roleRequestsManagement.review.rolesToAssign' | translate }}</label>
+        <eui-autocomplete (selectionChange)="onRoleSelected($event)" id="roles" [autocompleteDataSelected]="selectedRoles()"  [autocompleteData]="availableRolesAutocomplete()"
+                          [hasChips]="true">
+        </eui-autocomplete>
+      </div>
+      <div class="eui-u-flex eui-u-flex-wrap eui-u-mt-m">
+        <button [routerLink]="'/role-requests-management'" euiButton euiSecondary class="eui-u-mr-s eui-u-mb-s">
+          <eui-icon-svg icon="eui-ecl-back:eui"></eui-icon-svg>
+          <span euiLabel>{{'roleRequestsManagement.review.back' | translate}}</span>
+        </button>
+        <button (buttonClick)="submitRoleRequestReview('REJECTED')" euiButton euiDanger class="eui-u-mr-s eui-u-mb-s">
+          <eui-icon-svg icon="eui-ecl-close:eui"></eui-icon-svg>
+          <span euiLabel>{{ 'roleRequestsManagement.review.reject' | translate }}</span>
+        </button>
+        <button [euiDisabled]="selectedRoles().length === 0" (buttonClick)="submitRoleRequestReview('APPROVED')" euiButton euiPrimary class="eui-u-mr-s eui-u-mb-s">
+          <eui-icon-svg icon="eui-ecl-check"></eui-icon-svg>
+          <span euiLabel>{{'roleRequestsManagement.review.approve' | translate}}</span>
+        </button>
+      </div>
+    }
+
+  </eui-page-content>
+</eui-page>
+
+
+

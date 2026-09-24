@@ -1,0 +1,90 @@
+<ng-container *transloco="let t; prefix: 'identityAttributesInfoPage'">
+  <eui-page>
+    <eui-page-header [label]="t('title')">
+      <eui-page-header-action-items>
+        <button (buttonClick)="syncIdentityAttributes()" euiButton euiPrimary>
+          <eui-icon-svg icon="eui-refresh" />
+          {{ t('sync.button') }}
+        </button>
+      </eui-page-header-action-items>
+    </eui-page-header>
+    <eui-page-content>
+      <eui-page-columns>
+        <eui-page-column [isCollapsed]="true" [isCollapsible]="true" [label]="'filters.titlePlural' | translate" class="ednel-filters" euiSizeVariant="2xl">
+          <eui-page-column-body>
+            <form [formGroup]="identityAttributesFiltersForm" class="eui-u-flex eui-u-flex-column eui-u-flex-gap-s" id="filtersForm"
+                  (ngSubmit)="getIdentityAttributeList()">
+              <div euiInputGroup>
+                <label euiLabel for="name">{{ t('filters.name') }}</label>
+                <input data-testid="identityattributes_filter_input_name" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="name" formControlName="name" placeholder="{{t('filters.placeholder.name')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="code">{{ t('filters.code') }}</label>
+                <input data-testid="identityattributes_filter_input_code" [isShowMaxlength]="false" [euiMaxlength]="255" euiInputText id="code" formControlName="code" placeholder="{{t('filters.placeholder.code')}}" />
+              </div>
+              <div euiInputGroup>
+                <label euiLabel for="updateTimestamp">{{ t('filters.updateTimestamp') }}</label>
+                <eui-date-range-selector isResponsive id="updateTimestamp"
+                                         formControlName="updateTimestamp"
+                                        [firstInputPlaceholder]="'dateRange.start' | translate"
+                                        [secondInputPlaceholder]="'dateRange.end' | translate"></eui-date-range-selector>
+              </div>
+              <div class="ednel-button-group">
+                <button data-testid="identityattributes_filter_button_reset" euiButton id="reset-attributes-button" [disabled]="loading()" type="button" class="eui-u-width-50"
+                  euiSecondary (click)="resetFilters()">
+                  {{ t('filters.reset') }}
+                </button>
+                <button data-testid="identityattributes_filter_input_submit" euiButton id="submit-attributes-button" [disabled]="loading()" type="submit" class="eui-u-width-50"
+                  euiPrimary>
+                  {{ t('filters.search') }}
+                </button>
+              </div>
+            </form>
+          </eui-page-column-body>
+        </eui-page-column>
+        <eui-page-column>
+          <eui-page-column-body>
+            <lib-filter-chips (resetFilters)="resetFilters()" (removeChip)="removeChip($event)" [chips]="identityAttributesChips" translocoPrefix="identityAttributesInfoPage"></lib-filter-chips>
+            <div class="eui-table-v2__scrollable-wrapper">
+              <table data-testid="identity_attributes_table" euiTableV2 isTableResponsive="" [data]="data" class="--eui-bw-xs">
+                <ng-template euiTemplate="header">
+                  <tr>
+                    <th isSortable sortOn="name">{{ t('name') }}</th>
+                    <th isSortable sortOn="code">{{ t('code') }}</th>
+                    <th isSortable sortOn="assignableToRoles">{{ t('assignableToRoles') }}</th>
+                    <th isSortable sortOn="updateTimestamp">{{ t('updateTimestamp') }}</th>
+                  </tr>
+                </ng-template>
+                <ng-template let-row euiTemplate="body">
+                  <tr>
+                    <td data-col-label="name">{{ row.name }}</td>
+                    <td data-col-label="code">{{ row.code }}</td>
+                    <td data-col-label="assignableToRoles">{{ (row.assignableToRoles | readableBoolean) |  translate }}</td>
+                    <td data-col-label="updateTimestamp">{{ row.updateTimestamp | date:'dd/MM/yyyy' }}</td>
+                  </tr>
+                </ng-template>
+                <ng-template euiTemplate="noData">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="5">
+                      {{ t('empty') }}
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template euiTemplate="footer">
+                  <tr>
+                    <td class="eui-u-text-center" colspan="5">
+                      <eui-paginator #identityAttributesPaginator hasPageNumberNavigation [length]="totalElements"
+                        [pageSizeOptions]="[5, 10, 25, 100]" [page]="pagination.page" [pageSize]="pagination.pageSize"
+                        (pageChange)="onPageChange($event)" [hasPageNumberNavigation]="true">
+                      </eui-paginator>
+                    </td>
+                  </tr>
+                </ng-template>
+              </table>
+            </div>
+          </eui-page-column-body>
+        </eui-page-column>
+      </eui-page-columns>
+    </eui-page-content>
+  </eui-page>
+</ng-container>

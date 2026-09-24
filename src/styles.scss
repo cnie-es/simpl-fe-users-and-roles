@@ -1,0 +1,525 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary: #002B6E;
+$secondary: #3860ED;
+
+/* EDNEL customizations (start) */
+
+body, body * {
+    font-family: "Inter", sans-serif !important;
+}
+
+body {
+    background-color: var(--ednel-main-background);
+    color: var(--ednel-basic-color);
+}
+
+:root {
+    --eui-c-branding: #141048;
+    --eui-c-branding-dark: #081638;
+    --eui-c-branding-light: #081462;
+    --eui-c-primary: var(--color-primary);
+    --eui-c-primary-darker: #081462;
+    --eui-c-primary-dark: #0038A1;
+    --eui-c-primary-light: #428DE9;
+    --eui-c-primary-lighter: #A3D8FF;
+    --eui-c-primary-lightest: #FFFFFF;
+    --eui-c-primary-bg: #CDF1FF;
+    --eui-c-primary-bg-light: #DBF4FF;
+
+    --eui-c-info: #5C6F80;
+    --eui-c-info-dark: #4F6172;
+    --eui-c-info-darker: #1C262F;
+    --eui-c-info-light: #A7BACC;
+    --eui-c-info-lighter: #BFCEDB;
+    --eui-c-info-lightest: #D9E2EB;
+    --eui-c-info-bg: #ECF1F6;
+    --eui-c-info-bg-light: #F7F9FC;
+
+    --eui-c-accent: var(--color-primary);
+    --eui-c-accent-dark: #0038A1;
+    --eui-c-accent-darker: #081462;
+    --eui-c-accent-light: #428DE9;
+    --eui-c-accent-lighter: #A3D8FF;
+    --eui-c-accent-lightest: #FFFFFF;
+    --eui-c-accent-bg: #CDF1FF;
+    --eui-c-accent-bg-light: #DBF4FF;
+
+    --eui-c-success: #1B7C52;
+    --eui-c-success-dark: #006E45;
+    --eui-c-success-darker: #223A2D;
+    --eui-c-success-light: #70B590;
+    --eui-c-success-lighter: #98CBAE;
+    --eui-c-success-lightest: #C8E7D5;
+    --eui-c-success-bg: #E7F6ED;
+    --eui-c-success-bg-light: #F5FBF7;
+
+    --eui-c-warning: #9F5D00;
+    --eui-c-warning-dark: #904F00;
+    --eui-c-warning-darker: #4A3624;
+    --eui-c-warning-light: #E5A05A;
+    --eui-c-warning-lighter: #FFD9A9;
+    --eui-c-warning-lightest: #FFEFD3;
+    --eui-c-warning-bg: #FFF8ED;
+    --eui-c-warning-bg-light: #FEFDFB;
+
+    --eui-c-danger: #CE2C31;
+    --eui-c-danger-dark: #BE1523;
+    --eui-c-danger-darker: #641818;
+    --eui-c-danger-light: #EB8F88;
+    --eui-c-danger-lighter: #FDBEB7;
+    --eui-c-danger-lightest: #FFDCD7;
+    --eui-c-danger-bg: #FEEBE9;
+    --eui-c-danger-bg-light: #FFFCFC;
+
+    --eui-c-neutral: #80838D;
+    --eui-c-neutral-dark: #60646C;
+    --eui-c-neutral-darker: var(--color-neutral);
+    --eui-c-neutral-light: #B9BBC6;
+    --eui-c-neutral-lighter: #CDCED6;
+    --eui-c-neutral-bg: #E8E8EC;
+    --eui-c-neutral-bg-light: #F9F9FB;
+
+    --ednel-main-background: var(--color-base-300);
+    --ednel-toolbar-background: var(--color-primary-content);
+    --ednel-basic-color: var(--color-base-content);
+    --ednel-filters-background: #FCFCFC;
+    --ednel-button-border-radius: 8px;
+    --ednel-table-background: var(--color-primary-content);
+    --ednel-table-border-radius: 16px;
+    --ednel-table-horizontal-margin: 24px;
+    --ednel-table-bottom-margin: 24px;
+    --ednel-titles-color: var(--color-accent-content);
+    --ednel-toolbar-color: var(--color-neutral);
+    --ednel-hovered-color: #1C20240D;
+    --ednel-table-header-bg-color: #E9E9EA;
+    --ednel-table-header-color: var(--color-base-content);
+    // eui overrides
+    --eui-c-active: var(--ednel-titles-color) !important;
+
+    /* Primary */
+    --color-primary:           #1557b5;
+    --color-primary-content:   #ffffff;
+
+    /* Secondary */
+    --color-secondary:         #dbf4ff;
+    --color-secondary-content: #0038a1;
+
+    /* Accent */
+    --color-accent-bg:         #cdf1ff;
+    --color-accent-content:    #081462;
+
+    /* Neutral */
+    --color-neutral:           #1c2024;
+    --color-neutral-content:   #fcfcfd;
+
+    /* Base */
+    --color-base-100:          #ffffff;
+    --color-base-200:          #f9f9fb;
+    --color-base-300:          #f0f0f3;
+    --color-base-content:      #1c2024;
+
+    /* Info (neutral) */
+    --color-info:              #5c6f80;
+    --color-info-content:      #ffffff;
+
+    /* Success */
+    --color-success:           #1b7c52;
+    --color-success-content:   #ffffff;
+
+    /* Warning */
+    --color-warning:           #9f5d00;
+    --color-warning-content:   #ffffff;
+
+    /* Error */
+    --color-error:             #ce2c31;
+    --color-error-content:     #ffffff;
+}
+
+$content-width: 1184px;
+$spinner-dots-color: var(--color-accent-content);
+
+h1, h2, h3, h4, h5, h6, div[role="heading"] {
+    color: var(--ednel-titles-color) !important;
+}
+
+simpl-splash-screen {
+    .ednel-title-main-part {
+        color: black;
+    }
+    .ednel-title-secondary-part {
+        color: var(--color-primary);
+    }
+}
+
+.eui-app-main-content {
+    background-color: var(--ednel-main-background);
+}
+
+eui-page {
+    width: $content-width !important;
+    left: max(0px, calc((100vw - $content-width) / 2)) !important;
+    margin: 0 auto !important;
+    max-width: 100vw;
+
+    eui-page-columns {
+        max-height: max-content !important;
+    }
+}
+
+eui-page-column.ednel-filters {
+    $vertical-padding: 24px;
+    $horizontal-border: 1px solid var(--eui-c-divider);
+
+    // Position must be absolute to prevent filter expansion
+    // from shifting table and paginator alignment
+    position: absolute !important;
+    background-color: var(--ednel-filters-background);
+    z-index: 10;
+    padding-top: $vertical-padding !important;
+    padding-bottom: $vertical-padding !important;
+    border-top: $horizontal-border;
+    border-bottom: $horizontal-border;
+
+    &.eui-page-column--collapsed {
+        position: relative !important;
+    }
+
+    .ednel-button-group {
+        width: 100% !important;
+    }
+
+}
+
+.ednel-button-group {
+    align-self: center;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 33% !important;
+    margin: auto !important;
+
+    button {
+        flex: 1;
+    }
+}
+
+.eui-tab-item .eui-tab-item__label-text {
+    font-weight: 400 !important;
+}
+
+table[euiTableV2] {
+    border-radius: var(--ednel-table-border-radius) var(--ednel-table-border-radius) 0 0;
+    // prevent table content from overflowing the rounded corners
+    overflow: hidden !important;
+    margin: 0 var(--ednel-table-horizontal-margin) !important;
+    margin-bottom: var(--ednel-table-bottom-margin) !important;
+    width: calc(100% - 2 * var(--ednel-table-horizontal-margin)) !important;
+
+    &.ednel-table-without-paginator {
+        border-radius: var(--ednel-table-border-radius);
+        margin-bottom: var(--ednel-table-bottom-margin) !important;
+    }
+
+    thead > tr > th, tbody > tr > td {
+        font-size: 14px !important;
+
+        &, .eui-table-v2__sortable-col-content-label {
+            white-space: normal !important;
+            overflow: hidden;
+            overflow-wrap: break-word;
+        }
+
+        // wider screens
+        @media screen and (min-width: 767px) {
+            &, .eui-table-v2__sortable-col-content-label {
+                max-width: 150px;
+            }
+        }
+    }
+
+    thead > tr > th {
+        background-color: var(--ednel-table-header-bg-color) !important;
+        color: var(--ednel-table-header-color) !important;
+        border: none !important;
+        padding: 13px 14px !important;
+
+        // sorting buttons
+        button {
+            min-width: auto !important;
+            min-height: auto !important;
+            padding: 8px !important;
+
+            &:is(:hover, :focus) {
+                background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+        }
+    }
+
+    tbody > tr {
+        // same color for all table rows
+        background-color: var(--ednel-table-background) !important;
+
+        &:hover {
+            background-color: #EBF3FD !important;
+        }
+
+        // rows separation with a light border between them
+        > td {
+            border-bottom: var(--eui-bw-xs) solid #F0F0F0;
+            padding: 16px !important;
+
+            // prevent action buttons from wrapping
+            &:has(> button) {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    tfoot > tr {
+        background-color: var(--ednel-main-background) !important;
+
+        > td {
+            // no extra vertical space inside the table footer
+            padding: 0 !important;
+        }
+    }
+}
+
+button {
+    border-radius: var(--ednel-button-border-radius) !important;
+}
+
+eui-app-toolbar.eui-app-toolbar {
+    box-sizing: content-box;
+    background-color: var(--ednel-toolbar-background);
+    border-bottom-width: 2px !important;
+}
+
+eui-toolbar {
+    $color: var(--ednel-toolbar-color);
+    $hovered: var(--ednel-hovered-color);
+
+    background-color: transparent !important;
+    width: $content-width !important;
+    margin: 0 auto !important;
+    border-bottom: 0 !important;
+
+    eui-toolbar-logo {
+        // Prevents the header logo from disappearing when viewport is smaller than 767px
+        display: flex !important;
+    }
+
+    eui-toolbar-app {
+        $separator-color: #adb6bf;
+        color: var(--ednel-titles-color) !important;
+
+        &:before{
+            content: "|";
+            color: $separator-color;
+            padding-right: 12px;
+            font-size: 36px;
+        }
+    }
+
+    eui-user-profile button.eui-user-profile-content {
+        // increase horizontal padding to improve appearance on hover
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        gap: 1rem !important;
+
+        &:hover {
+            background-color: $hovered !important;
+        }
+
+        > eui-avatar {
+            order: 1;
+
+            > div {
+                background-color: transparent !important;
+                border: 0 !important;
+            }
+        }
+
+        > div.eui-user-profile__infos {
+            order: 2;
+            position: relative;
+            top: -2px;
+            left: -10px;
+
+            div.eui-user-profile__infos-name {
+                color: $color !important;
+                background-color: transparent !important;
+                font-weight: bold;
+            }
+        }
+
+        // arrow icon in the user profile button
+        > eui-icon-svg {
+            order: 3;
+            top: -2px;
+
+            svg {
+                color: $color !important;
+            }
+        }
+    }
+}
+
+eui-user-profile-menu-item.eui-user-profile-menu-item:has(eui-language-selector) {
+    padding: 0 !important;
+}
+
+eui-language-selector {
+    $color: var(--ednel-toolbar-color);
+    $hovered: var(--ednel-hovered-color);
+
+    flex: 1;
+
+    button {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        flex: 1;
+
+        &:hover {
+            background-color: $hovered !important;
+        }
+
+        // language selector icon
+        eui-icon-svg svg {
+            fill: $color !important;
+        }
+
+        // language code
+        span {
+            color: $color !important;
+        }
+    }
+}
+
+eui-badge {
+    border-radius: 20px !important;
+    padding: 4px 12px !important;
+}
+
+eui-paginator {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    background-color: var(--ednel-table-background);
+    border-radius: 0 0 var(--ednel-table-border-radius) var(--ednel-table-border-radius);
+
+    > div {
+        flex-direction: row !important;
+        gap: 12px !important;
+        width: 50%;
+        justify-content: space-between;
+
+        > div:nth-of-type(2) {
+            padding-top: 4px;
+        }
+    }
+}
+
+/* EDNEL customizations (end) */
+
+html {
+    margin: 0;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+body simpl-splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F9FAFB; // #243882;
+    color: #243882;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .simpl-title {
+        font-size: large;
+        font-weight: bold;
+    }
+}
+
+body:not(.simpl-splash-screen-hidden) {
+    overflow: hidden;
+}
+
+body.simpl-splash-screen-hidden simpl-splash-screen {
+    visibility: hidden;
+    opacity: 0;
+}
+
+body simpl-splash-screen .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 200px;
+}
+
+body simpl-splash-screen .spinner > div {
+    width: 24px;
+    height: 24px;
+    background-color: $spinner-dots-color;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: simpl-bouncedelay 1s infinite ease-in-out both;
+    animation: simpl-bouncedelay 1s infinite ease-in-out both;
+}
+
+body simpl-splash-screen .spinner {
+    .bounce1 {
+        animation-delay: -0.4s;
+    }
+    .bounce2 {
+        animation-delay: -0.3s;
+    }
+    .bounce3 {
+        animation-delay: -0.2s;
+    }
+    .bounce4 {
+        animation-delay: -0.1s;
+    }
+    .bounce5 {
+        animation-delay: 0s;
+    }
+}
+
+@-webkit-keyframes simpl-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes simpl-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
