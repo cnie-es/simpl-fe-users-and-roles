@@ -101,3 +101,4 @@ cors:
   allowOrigin: "" # ingress separed by comma
 ingress:
   issuer: "" # issuer ingress name
+  className: "" # ingress class name; defaults to "nginx" if left empty

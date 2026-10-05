@@ -1,16 +1,3 @@
-## ednel-v1.0.2 (2026-09-24)
-
-> Sin cambios funcionales respecto a `ednel-v1.0.4`. Solo cambia el numero de version.
-
-### Changed (2026-09-24)
-
-- **Numero de version**: se publica como `ednel-v1.0.2`, que esta libre en git, en Harbor y en
-  el repositorio de distribucion. No se reutiliza `ednel-v1.0.4` porque es el tag que
-  `fe-authentication-provider` tiene desplegado hoy en prod, stage y dev, y publicar sobre el
-  reescribiria la imagen de Harbor que esos entornos consumen. Tampoco `ednel-v1.0.3`, que es el
-  que corre `fe-users-and-roles` en esos mismos entornos.
-- El periodo de modificacion del aviso no cambia: no se ha tocado codigo.
-
 ## ednel-v1.0.4 (2026-09-16)
 
 > Derivative work by the **EDNEL-RIOJA** project team for **CNIE-ES**, based on the upstream

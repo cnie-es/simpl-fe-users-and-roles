@@ -5,7 +5,7 @@
 > on the upstream `2.11.0` release (commit `e8941cb`,
 > [upstream](https://code.europa.eu/simpl/simpl-open/development/iaa/fe-users-and-roles)),
 > modified by the EDNEL-RIOJA project team for CNIE-ES between **2026-03-03 and 2026-09-16**.
-> Released as `ednel-v1.0.2` under the **EUPL-1.2**, the same licence as the original work. Full
+> Released as `ednel-v1.0.4` under the **EUPL-1.2**, the same licence as the original work. Full
 > details of what was changed and when: [NOTICE.EDNEL.md](NOTICE.EDNEL.md).
 
 ## 📑 Table of Contents

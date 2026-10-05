@@ -13,7 +13,7 @@ metadata:
     cert-manager.io/renew-before: "720h"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.className | default "nginx" }}
   tls:
     - hosts:
         - {{ tpl .Values.hostFe . }}
@@ -23,7 +23,10 @@ spec:
       host: {{ tpl .Values.hostFe . }}
       http:
         paths:
-        - path: "{{ .Values.path }}"
+        # /* final: con ImplementationSpecific, un controlador tipo APISIX toma el path
+        # literal en vez de hacer match de prefijo (ver tier1-gateway); con nginx el /*
+        # no afecta.
+        - path: "{{ .Values.path }}/*"
           pathType: ImplementationSpecific
           backend:
             service:

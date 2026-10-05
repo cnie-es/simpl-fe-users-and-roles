@@ -35,7 +35,7 @@ carry those notices; release images must be built with the default configuration
 |---|---|
 | Modified by | EDNEL-RIOJA project team, for CNIE-ES |
 | Public repository of this derivative work | https://github.com/cnie-es/simpl-fe-users-and-roles |
-| Version of this derivative work | `ednel-v1.0.2` |
+| Version of this derivative work | `ednel-v1.0.4` |
 | Dates of modification | **2026-03-03 to 2026-09-16** |
 
 The modifications are licensed under the **EUPL-1.2**, the same licence as the original work.
