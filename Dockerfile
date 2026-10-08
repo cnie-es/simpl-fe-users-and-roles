@@ -11,7 +11,7 @@ ARG IMAGE_CREATED="1970-01-01T00:00:00Z"
 # every key below is re-declared explicitly so none of that third-party metadata survives here.
 LABEL org.opencontainers.image.title="fe-users-and-roles (CNIE-ES fork)" \
       org.opencontainers.image.description="Modified version of SIMPL fe-users-and-roles (upstream commit e8941cb), modified by the EDNEL-RIOJA project team for CNIE-ES between 2026-03-03 and 2026-09-16. See /licenses/NOTICE.EDNEL.md." \
-      org.opencontainers.image.version="ednel-v1.0.8" \
+      org.opencontainers.image.version="ednel-v1.0.4" \
       org.opencontainers.image.vendor="CNIE-ES" \
       org.opencontainers.image.licenses="EUPL-1.2" \
       org.opencontainers.image.source="https://github.com/cnie-es/simpl-fe-users-and-roles" \
